@@ -52,7 +52,7 @@ public class Scaffold extends Module {
     public void onEnable() {
         super.onEnable();
     }
-    
+
     private Vec3 getPositionByFace(BlockPos position, EnumFacing facing) {
         Vec3 offset = new Vec3((double) facing.getDirectionVec().getX() / 2.0,
                 (double) facing.getDirectionVec().getY() / 2.0, (double) facing.getDirectionVec().getZ() / 2.0);
@@ -148,8 +148,11 @@ public class Scaffold extends Module {
         double allmax = MathHelper.sqrt_double(x * x + z * z);
         float yaw = (float) (Math.atan2(z, x) * 180.0D / Math.PI) - 90.0F;
         float pitch = (float) (Math.atan2(ymax, allmax) * 180.0D / Math.PI);
-
-
+        //GCD
+        final float f2 = Minecraft.getMinecraft().gameSettings.mouseSensitivity * 0.6F + 0.2F;
+        final float f3 = f2 * f2 * f2 * 1.2F;
+        yaw -= yaw % f3;
+        pitch -= pitch % (f3 * f2);
         return new float[]{yaw, MathHelper.clamp_float(pitch, 75, 80)};
     }
 }
