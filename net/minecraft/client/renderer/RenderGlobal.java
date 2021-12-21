@@ -313,7 +313,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
         if (this.isRenderEntityOutlines())
         {
             GlStateManager.enableBlend();
-            GlStateManager.tryBlendFuncSeparate(770, 1, 0, 1);
+            GlStateManager.tryBlendFuncSeparate(770, 771, 0, 1);
             this.entityOutlineFramebuffer.framebufferRenderExt(this.mc.displayWidth, this.mc.displayHeight, false);
             GlStateManager.disableBlend();
         }
@@ -321,8 +321,9 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
 
     protected boolean isRenderEntityOutlines()
     {
-         return Ambien.INSTANCE.moduleManager.getModule("ESP").isToggled();
-      //  return !Config.isFastRender() && !Config.isShaders() && !Config.isAntialiasing() ? this.entityOutlineFramebuffer != null && this.entityOutlineShader != null && this.mc.thePlayer != null && this.mc.thePlayer.isSpectator() && this.mc.gameSettings.keyBindSpectatorOutlines.isKeyDown() : false;
+        if(Ambien.INSTANCE.moduleManager.getModule("ESP").isToggled())
+            return !Config.isFastRender() && !Config.isShaders() && !Config.isAntialiasing();
+        return !Config.isFastRender() && !Config.isShaders() && !Config.isAntialiasing() ? this.entityOutlineFramebuffer != null && this.entityOutlineShader != null && this.mc.thePlayer != null && this.mc.thePlayer.isSpectator() && this.mc.gameSettings.keyBindSpectatorOutlines.isKeyDown() : false;
     }
 
     private void generateSky2()
