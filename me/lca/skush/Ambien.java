@@ -2,6 +2,7 @@ package me.lca.skush;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
+import de.Hero.clickgui.ClickGUI;
 import me.lca.skush.clickgui.Clickgui;
 import me.lca.skush.clickgui.setting.SettingsManager;
 import me.lca.skush.command.CommandManager;
@@ -16,11 +17,12 @@ public enum Ambien {
 
     INSTANCE;
 
-    private EventBus eventBus;
-    private SettingsManager settingsManager;
-    private ModuleManager moduleManager;
-    private CommandManager commandManager;
+    public EventBus eventBus;
+    public SettingsManager settingsManager;
+    public ModuleManager moduleManager;
+    public CommandManager commandManager;
     private Clickgui clickGui;
+    public ClickGUI heroCodeGui;
     public String name = "Ambien", version = "X", prefix = "[" + name + "]";
     public String[] authors = new String[] {"LCA_MODZ","Skush"};
     public final void init() {
@@ -29,6 +31,7 @@ public enum Ambien {
         moduleManager = new ModuleManager();
         commandManager = new CommandManager();
         clickGui = new Clickgui();
+        heroCodeGui = new ClickGUI();
 
         eventBus.register(this);
     }
