@@ -40,6 +40,8 @@ public enum Ambien {
         fileManager = new FileManager();
         fileManager.createMainDirectory();
 
+        System.out.println("Adolf");
+
         eventBus.register(this);
     }
 
