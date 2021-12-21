@@ -28,6 +28,7 @@ public enum Tutorial {
         moduleManager = new ModuleManager();
         commandManager = new CommandManager();
         clickGui = new Clickgui();
+        System.out.println("Adolf");
 
         eventBus.register(this);
     }
