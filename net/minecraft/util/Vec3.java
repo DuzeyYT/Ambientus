@@ -37,7 +37,9 @@ public class Vec3
     {
         this((double)p_i46377_1_.getX(), (double)p_i46377_1_.getY(), (double)p_i46377_1_.getZ());
     }
-
+    public Vec3 multi(double multiplier) {
+        return new Vec3(this.xCoord * multiplier, this.yCoord * multiplier, this.zCoord * multiplier);
+    }
     /**
      * Returns a new vector with the result of the specified vector minus this.
      */

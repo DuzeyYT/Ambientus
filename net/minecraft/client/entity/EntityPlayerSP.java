@@ -2,6 +2,7 @@ package net.minecraft.client.entity;
 
 import me.lca.skush.Ambien;
 import me.lca.skush.event.impl.EventChat;
+import me.lca.skush.event.impl.EventPreMotion;
 import me.lca.skush.event.impl.EventPreUpdate;
 import me.lca.skush.event.impl.EventUpdate;
 import net.minecraft.client.Minecraft;
@@ -186,8 +187,13 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public void onUpdateWalkingPlayer()
     {
+
+
+        EventPreMotion event = new EventPreMotion(this.rotationYaw, this.rotationPitch);
+        Ambien.INSTANCE.getEventBus().post(event);
         EventPreUpdate eventPreUpdate = new EventPreUpdate(new float[] {rotationYaw, rotationPitch}, onGround);
         Ambien.INSTANCE.getEventBus().post(eventPreUpdate);
+
         boolean flag = this.isSprinting();
 
         if (flag != this.serverSprintState)

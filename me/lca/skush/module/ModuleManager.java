@@ -12,6 +12,7 @@ import me.lca.skush.module.impl.movement.NoSlowDown;
 import me.lca.skush.module.impl.movement.Sprint;
 import me.lca.skush.module.impl.player.*;
 import me.lca.skush.module.impl.visual.*;
+import me.lca.skush.module.impl.world.Scaffold;
 
 import java.util.ArrayList;
 
@@ -47,6 +48,8 @@ public class ModuleManager {
         addModule(new ChestESP());
         addModule(new ItemPhysics());
         addModule(new NameTags());
+        /* World */
+        addModule(new Scaffold());
         /* HUD */
         addModule(new ClickGui());
         addModule(new HUD());

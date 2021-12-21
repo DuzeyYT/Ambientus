@@ -102,9 +102,10 @@ public abstract class EntityLivingBase extends Entity
 
     /** Entity head rotation yaw */
     public float rotationYawHead;
-
+    public float rotationPitchHead;
     /** Entity head rotation yaw at previous tick */
     public float prevRotationYawHead;
+    public float prevRotationPitchHead;
 
     /**
      * A factor used to determine how far this entity will move each tick if it is jumping or falling.
@@ -381,7 +382,9 @@ public abstract class EntityLivingBase extends Entity
         this.prevRotationYawHead = this.rotationYawHead;
         this.prevRotationYaw = this.rotationYaw;
         this.prevRotationPitch = this.rotationPitch;
+        this.prevRotationPitchHead = this.rotationPitchHead;
         this.worldObj.theProfiler.endSection();
+
     }
 
     /**
@@ -2159,13 +2162,10 @@ public abstract class EntityLivingBase extends Entity
      */
     public Vec3 getLook(float partialTicks)
     {
-        if (partialTicks == 1.0F)
-        {
-            return this.getVectorForRotation(this.rotationPitch, this.rotationYawHead);
-        }
-        else
-        {
-            float f = this.prevRotationPitch + (this.rotationPitch - this.prevRotationPitch) * partialTicks;
+        if (partialTicks == 1.0F) {
+            return this.getVectorForRotation(this.rotationPitchHead, this.rotationYawHead);
+        }else{
+            float f = this.prevRotationPitch + (this.rotationPitchHead - this.prevRotationPitchHead) * partialTicks;
             float f1 = this.prevRotationYawHead + (this.rotationYawHead - this.prevRotationYawHead) * partialTicks;
             return this.getVectorForRotation(f, f1);
         }
