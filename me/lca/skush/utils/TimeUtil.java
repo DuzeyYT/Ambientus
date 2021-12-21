@@ -1,38 +1,29 @@
 package me.lca.skush.utils;
 
 public final class TimeUtil {
+    private long lastMS = 0L;
 
-    private long lastTime = getCurrentTime();
-
-    public TimeUtil() {
-        reset();
+    public long getCurrentMS() {
+        return System.nanoTime() / 1000000L;
     }
 
-    public long getCurrentTime() {
-        return System.nanoTime() / 1000000;
+    public boolean isDelayComplete(double delay) {
+        return System.currentTimeMillis() - this.lastMS >= delay;
     }
 
-    public long getLastTime() {
-        return lastTime;
+    public boolean hasTimeReached(long delay) {
+        return System.currentTimeMillis() - lastMS >= delay;
     }
 
-    public long getDifference() {
-        return getCurrentTime() - lastTime;
+    public long getDelay() {
+        return System.currentTimeMillis() - lastMS;
     }
 
     public void reset() {
-        lastTime = getCurrentTime();
-    }
-
-    public boolean isDelayComplete(double milliseconds) {
-        return getDifference() >= milliseconds;
-    }
-
-    public boolean hasTimePassed(long milliseconds) {
-        return getDifference() >= milliseconds;
+        lastMS = getCurrentMS();
     }
 
     public void setLastMS() {
-        lastTime = System.currentTimeMillis();
+        lastMS = System.currentTimeMillis();
     }
 }

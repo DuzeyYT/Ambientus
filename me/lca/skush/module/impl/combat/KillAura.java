@@ -39,7 +39,7 @@ public class KillAura extends Module {
             yaw = rotations[0];
             pitch = rotations[1];
 
-            if (timeUtil.hasTimePassed((long) (1000 / getSetting("AuraAPS").getValDouble()))) {
+            if (timeUtil.hasTimeReached((long) (1000 / getSetting("AuraAPS").getValDouble()))) {
                 AuraUtil.attack(target);
                 timeUtil.reset();
             }
