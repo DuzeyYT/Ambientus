@@ -1,0 +1,585 @@
+# Contributors of Polish localization #
+#  Kamil7430 2016-03-14 -- 2017-03-12 #
+
+# General
+of.general.ambiguous=dwuznaczny
+of.general.custom=Inny
+of.general.from=Od
+of.general.id=Id
+of.general.restart=restart
+of.general.smart=Smart
+
+# Keys
+of.key.zoom=Zoom (przybli?enie)
+
+# Message
+of.message.aa.shaders1=Antyaliasing nie jest kompatybilny z Shaderami.
+of.message.aa.shaders2=Prosz?, wy??cz Shadery, aby u?ywa? tej opcji.
+
+of.message.af.shaders1=Filtrowanie anizotropowe nie jest kompatybilne z Shaderami.
+of.message.af.shaders2=Prosz?, wy??cz Shadery, aby u?ywa? tej opcji.
+
+of.message.fr.shaders1=Szybkie renderowanie nie jest kompatybilne z Shaderami.
+of.message.fr.shaders2=Prosz?, wy??cz Shadery, aby u?ywa? tej opcji.
+
+of.message.an.shaders1=Anaglifowe 3D nie jest kompatybilne z Shaderami.
+of.message.an.shaders2=Prosz?, wy??cz Shadery, aby u?ywa? tej opcji.
+
+of.message.shaders.aa1=Shadery nie s? kompatybilne z antyaliasingiem. 
+of.message.shaders.aa2=Prosz?, wy??cz opcj? Jako?? -> Antyaliasing, a nast?pnie zrestartuj gr?.
+
+of.message.shaders.af1=Shadery nie s? kompatybilne z filtrowaniem anizotropowym.
+of.message.shaders.af2=Prosz?, wy??cz opcj? Jako?? -> Filtrowanie anizotropowe.
+
+of.message.shaders.fr1=Shadery nie s? kompatybilne z szybkim renderowaniem.
+of.message.shaders.fr2=Prosz?, wy??cz opcj? Wydajno?? -> Szybkie renderowanie.
+
+of.message.shaders.an1=Shadery nie s? kompatybilne z anaglifowym 3D.
+of.message.shaders.an2=Prosz?, wy??cz opcj? Inne -> Anaglifowe 3D.
+
+of.message.newVersion=Nowa wersja §eOptiFine§f jest dost?pna: §e%s§f
+of.message.java64Bit=Zalecamy zainstalowanie §e64-bitowego ?rodowiska Java§f, aby podwy?szy? wydajno??.
+of.message.openglError=§eB??d OpenGL§f: %s (%s)
+
+of.message.shaders.loading=Wczytuj? shadery: %s
+
+of.message.other.reset=Czy chcesz przywróci? wszystkie ustawienia graficzne do ich domy?lnych warto?ci?
+ 
+of.message.loadingVisibleChunks=Wczytywanie widzialnych chunków
+
+# Video settings
+
+options.graphics.tooltip.1=Jako?? grafiki
+options.graphics.tooltip.2=  Szybka  - ni?sza jako??, wi?ksza wydajno??
+options.graphics.tooltip.3=  Dok?adna - wy?sza jako??, mniejsza wydajno??
+options.graphics.tooltip.4=Zmienia wygl?d chmur, li?ci, wody,
+options.graphics.tooltip.5=cieni oraz boków bloków trawy.
+
+of.options.renderDistance.extreme=Ekstremalna
+
+options.renderDistance.tooltip.1=Odleg?o?? renderowania
+options.renderDistance.tooltip.2=  2 Niewielka - 32m (najwy?sza wydajno??)
+options.renderDistance.tooltip.3=  4 Krótka - 64m (wysoka wydajno??)
+options.renderDistance.tooltip.4=  8 Normalna - 128m
+options.renderDistance.tooltip.5=  16 D?uga - 256m (niska wydajno??)
+options.renderDistance.tooltip.6=  32 Ekstremalna - 512m (najni?sza wydajno??)
+options.renderDistance.tooltip.7=Odleg?o?? renderowania ekstremalna jest bardzo zasobo?erna!
+options.renderDistance.tooltip.8=Warto?ci powy?ej 16 D?uga s? zalecane tylko do lokalnych ?wiatów.
+
+options.ao.tooltip.1=G?adkie o?wietlenie
+options.ao.tooltip.2=  Wy?. - brak wyg?adzania o?wietlenia (wysoka wydajno??)
+options.ao.tooltip.3=  Min. - podstawowe wyg?adzanie o?wietlenia (niska wydajno??)
+options.ao.tooltip.4=  Maks. - pe?ne wyg?adzanie o?wietlenia (najni?sza wydajno??)
+
+options.framerateLimit.tooltip.1=Limit klatek/s (FPS)
+options.framerateLimit.tooltip.2=  VSync - ograniczone do mo?liwo?ci monitora (60, 30, 20)
+options.framerateLimit.tooltip.3=  5-255 - ograniczone do podanej warto?ci
+options.framerateLimit.tooltip.4=  Nielimitowane - brak limitu (najwy?sza wydajno??)
+options.framerateLimit.tooltip.5=Limit klatek zmiejsza FPS, nawet, gdy warto??
+options.framerateLimit.tooltip.6=graniczna nie zosta?a osi?gni?ta.
+of.options.framerateLimit.vsync=VSync
+
+of.options.AO_LEVEL=Poziom wyg?adzania o?wietlenia
+of.options.AO_LEVEL.tooltip.1=Poziom wyg?adzania o?wietlenia
+of.options.AO_LEVEL.tooltip.2=  Wy?. - brak cieni
+of.options.AO_LEVEL.tooltip.3=  50%% - jasne cienie
+of.options.AO_LEVEL.tooltip.4=  100%% - ciemne cienie
+
+options.viewBobbing.tooltip.1=Bardziej realistyczne poruszanie si?.
+options.viewBobbing.tooltip.2=Gdy uzywasz mipmap, wy??cz t? opcj?, aby podwy?szy? wydajno??.
+
+options.guiScale.tooltip.1=Wielko?? Interfejsu
+options.guiScale.tooltip.2=Mniejszy interfejs mo?e pody?szy? wydajno??
+
+options.vbo.tooltip.1=Vertex Buffer Objects
+options.vbo.tooltip.2=U?ywa alternatywnej metody renderowania, która jest
+options.vbo.tooltip.3=szybsza (o 5-10%%) ni? zwyk?a metoda.
+
+options.gamma.tooltip.1=Podwy?sza jasno?? ciemnych obiektów
+options.gamma.tooltip.2=  Nastrojowa - standardowa jasno??
+options.gamma.tooltip.3=  1%%-99%% - mo?liwo?? dostosowania jasno?ci
+options.gamma.tooltip.4=  Jaskrawa - maksymalna jasno?? ciemnych obiektów
+options.gamma.tooltip.5=Ta opcja nie podwy?sza jasno?ci obiektów, które
+options.gamma.tooltip.6=s? w pe?ni czarne.
+
+options.anaglyph.tooltip.1=Anaglify 3D
+options.anaglyph.tooltip.2=W??cza stereoskopowy efekt 3D u?ywaj?c ró?nych kolorów
+options.anaglyph.tooltip.3=dla ka?dego oka.
+options.anaglyph.tooltip.4=Wymaga czerwono-niebieskich okularów.
+
+options.blockAlternatives.tooltip.1=Alternatywne bloki
+options.blockAlternatives.tooltip.2=U?ywa alternatywnych modeli dla niektóych bloków.
+options.blockAlternatives.tooltip.3=Bazowane na wybranyej paczce tekstur.
+
+of.options.ALTERNATE_BLOCKS=Alternatywne bloki
+of.options.blockAlternatives.tooltip.1=Alternatywne bloki
+of.options.blockAlternatives.tooltip.2=U?ywa alternatywnych modeli dla niektóych bloków.
+of.options.blockAlternatives.tooltip.3=Bazowane na wybranyej paczce tekstur.
+
+of.options.FOG_FANCY=Mg?a
+of.options.FOG_FANCY.tooltip.1=Typ mg?y
+of.options.FOG_FANCY.tooltip.2=  Szybka - szybka mg?a
+of.options.FOG_FANCY.tooltip.3=  Dok?adna - ?adniejsza mg?a, zmniejsza wydajno??
+of.options.FOG_FANCY.tooltip.4=  Wy?. - brak mg?y, najwy?sza wydajno??
+of.options.FOG_FANCY.tooltip.5=Dok?adna mg?a jest dost?pna jedynie, je?eli
+of.options.FOG_FANCY.tooltip.6=obs?uguje j? karta graficzna.
+
+of.options.FOG_START=Pocz?tkowa mg?a
+of.options.FOG_START.tooltip.1=Pocz?tkowa mg?a
+of.options.FOG_START.tooltip.2=  0.2 - mg?a startuje w pobli?u gracza
+of.options.FOG_START.tooltip.3=  0.8 - mg?a startuje z dala od gracza
+of.options.FOG_START.tooltip.4=Ta opcja zazwyczaj nie zmienia wydajno?ci.
+
+of.options.CHUNK_LOADING=?adowanie chunków
+of.options.CHUNK_LOADING.tooltip.1=?adowanie chunków
+of.options.CHUNK_LOADING.tooltip.2=  Domy?lne - niestabilne FPS podczas ?adowania chunków
+of.options.CHUNK_LOADING.tooltip.3=  G?adkie - stabilne FPS
+of.options.CHUNK_LOADING.tooltip.4=  Wielordzeniowe - stabilne FPS, 3 razy szybsze ?adowanie ?wiata
+of.options.CHUNK_LOADING.tooltip.5=Opcje G?adkie i Wielordzeniowe zredukuj?
+of.options.CHUNK_LOADING.tooltip.6=przyci?cia spowodowane ?adowaniem chunków.
+of.options.CHUNK_LOADING.tooltip.7=Opcja Wielordzeniowe mo?e trzykrotnie przyspieszy? ?adowanie
+of.options.CHUNK_LOADING.tooltip.8=oraz podwy?szy? FPS u?ywaj?c dodatkowego rdzenia.
+of.options.chunkLoading.smooth=G?adkie
+of.options.chunkLoading.multiCore=Wielordzeniowe
+
+of.options.shaders=Shadery...
+of.options.shadersTitle=Shadery
+
+of.options.shaders.packNone=Wy??czone
+of.options.shaders.packDefault=Wewn?trzne
+
+of.options.shaders.ANTIALIASING=Antyaliasing
+of.options.shaders.NORMAL_MAP=Normalna mapa
+of.options.shaders.SPECULAR_MAP=Lustrzana mapa
+of.options.shaders.RENDER_RES_MUL=Jako?? renderowania
+of.options.shaders.SHADOW_RES_MUL=Jako?? cieni
+of.options.shaders.HAND_DEPTH_MUL=G??boko?? r?ki
+of.options.shaders.CLOUD_SHADOW=Cienie chmur
+of.options.shaders.OLD_HAND_LIGHT=Stare o?wietlanie r?ki
+of.options.shaders.OLD_LIGHTING=Stare o?wietlanie
+of.options.shaders.SHADER_PACK=Paczka shaderów
+
+of.options.shaders.shadersFolder=Folder na shadery
+of.options.shaders.shaderOptions=Ustawienia shaderów...
+
+of.options.shaderOptionsTitle=Ustawienia shaderów
+
+of.options.quality=Jako??...
+of.options.qualityTitle=Ustawienia jako?ci
+
+of.options.details=Detale...
+of.options.detailsTitle=Ustawienia detali
+
+of.options.performance=Wydajno??...
+of.options.performanceTitle=Ustawienia wydajno?ci
+
+of.options.animations=Animacje...
+of.options.animationsTitle=Ustawienia animacji
+
+of.options.other=Inne...
+of.options.otherTitle=Inne ustawienia
+
+of.options.other.reset=Przywró? domy?lne ustawienia graficzne...
+
+of.shaders.profile=Profil
+
+# Quality
+
+of.options.mipmap.bilinear=Dwuliniowe
+of.options.mipmap.linear=Liniowy
+of.options.mipmap.nearest=Najbli?szy
+of.options.mipmap.trilinear=Trójliniowy
+
+options.mipmapLevels.tooltip.1=Efekt wizualny, który sprawia, ?e odleg?e bloki wygl?daj?
+options.mipmapLevels.tooltip.2=lepiej poprzez wyg?adzanie detali tekstur
+options.mipmapLevels.tooltip.3=  Wy?. - brak wyg?adzania
+options.mipmapLevels.tooltip.4=  1 - minimalne wyg?adzanie
+options.mipmapLevels.tooltip.5=  4 - maksymalne wyg?adzanie
+options.mipmapLevels.tooltip.6=Ta opcja nie ma wp?ywu na wydajno??.
+
+of.options.MIPMAP_TYPE=Typ mipmapy
+of.options.MIPMAP_TYPE.tooltip.1=Efekt wizualny, który sprawia, ?e odleg?e bloki wygl?daj?
+of.options.MIPMAP_TYPE.tooltip.2=lepiej poprzez wyg?adzanie detali tekstur
+of.options.MIPMAP_TYPE.tooltip.3=  Najbli?szy - szorstkie wyg?adzanie (najwy?sza wydajno??)
+of.options.MIPMAP_TYPE.tooltip.4=  Liniowy - normalne wyg?adzanie
+of.options.MIPMAP_TYPE.tooltip.5=  Dwuliniowy - ?adne wyg?adzanie
+of.options.MIPMAP_TYPE.tooltip.6=  Trójliniowe - naj?adniejsze wyg?adzanie (najni?sza wydajno??)
+
+
+of.options.AA_LEVEL=Antyaliasing
+of.options.AA_LEVEL.tooltip.1=Antyaliasing
+of.options.AA_LEVEL.tooltip.2= OFF - (domy?lne) brak antyaliasingu (wy?sza wydajno??)
+of.options.AA_LEVEL.tooltip.3= 2-16 - antyaliasing linii i rogów (nizsza wydajno??)
+of.options.AA_LEVEL.tooltip.4=Antyaliasing wyg?adza poszarpane linie i
+of.options.AA_LEVEL.tooltip.5=ostre przej?cia kolorów.
+of.options.AA_LEVEL.tooltip.6=Gdy w??czone, mo?e mocno obni?y? ilo?? FPS.
+of.options.AA_LEVEL.tooltip.7=Niektóre poziomy s? nieobs?ugiwane przez niektóre karty graficzne.
+of.options.AA_LEVEL.tooltip.8=Wymaga restartu!
+
+of.options.AF_LEVEL=Wyg?adzanie Anizotropowe
+of.options.AF_LEVEL.tooltip.1=Wyg?adzanie anizotropowe
+of.options.AF_LEVEL.tooltip.2= Wy?. - (domy?lne) standarowe detale tekstur (najwy?sza wydajno??)
+of.options.AF_LEVEL.tooltip.3= 2-16 - ?adniejsze detale w mipmapowanych teksturach (ni?sza wydajno??)
+of.options.AF_LEVEL.tooltip.4=Filtrowanie anizotropowe pokazuje detale w
+of.options.AF_LEVEL.tooltip.5=mipmapowanych teksturach.
+of.options.AF_LEVEL.tooltip.6=Gdy w??czone, mo?e mocno obni?y? FPS.
+
+of.options.CLEAR_WATER=Czysta woda
+of.options.CLEAR_WATER.tooltip.1=Czysta woda
+of.options.CLEAR_WATER.tooltip.2=  W?. - czysta, przezroczysta woda
+of.options.CLEAR_WATER.tooltip.3=  Wy?. - domy?lna woda
+
+of.options.RANDOM_MOBS=Losowe moby
+of.options.RANDOM_MOBS.tooltip.1=Losowe tekstury mobów
+of.options.RANDOM_MOBS.tooltip.2=  Wy?. - brak losowych tekstur mobów, wy?sza wydajno??
+of.options.RANDOM_MOBS.tooltip.3=  W?. - w??czone losowe tekstury mobów, ni?sza wydajno??
+of.options.RANDOM_MOBS.tooltip.4=Ta opcja u?ywa losowych tekstur dla mobów w grze.
+of.options.RANDOM_MOBS.tooltip.5=Wymaga paczki tesktur z wieloma teksturami dla jednego moba.
+
+of.options.BETTER_GRASS=?adniejsza trawa
+of.options.BETTER_GRASS.tooltip.1=?adniejsza trawa
+of.options.BETTER_GRASS.tooltip.2=  Wy?. - domy?lne boki bloków trawy, najwy?sza wydajno??
+of.options.BETTER_GRASS.tooltip.3=  Szybka - pe?ne boki bloków trawy, ni?sza wydajno??
+of.options.BETTER_GRASS.tooltip.4=  Dok?adna - dynamiczne boki bloków trawy, najni?sza wydajno??
+
+of.options.BETTER_SNOW=?adniejszy ?nieg
+of.options.BETTER_SNOW.tooltip.1=?adniejszy ?nieg
+of.options.BETTER_SNOW.tooltip.2=  Wy?. - domy?lny ?nieg, wy?sza wydajno??
+of.options.BETTER_SNOW.tooltip.3=  W?. - ?adniejszy ?nieg, mniejsza wydajno??
+of.options.BETTER_SNOW.tooltip.4=Pokazuje ?nieg pod przezroczystymi blokami (p?ot, wysoka
+of.options.BETTER_SNOW.tooltip.5=trawa) gdy granicz? ze ?niegiem
+
+of.options.CUSTOM_FONTS=W?asne czcionki
+of.options.CUSTOM_FONTS.tooltip.1=W?asne czcionki
+of.options.CUSTOM_FONTS.tooltip.2=  W?. - u?ywa innych czcionek (domy?lne), ni?sza wydajno??
+of.options.CUSTOM_FONTS.tooltip.3=  Wy?. - u?ywa domy?lnej czcionki, wy?sza wydajno??
+of.options.CUSTOM_FONTS.tooltip.4=W?asne czcionki s? cz?sto dodawane do
+of.options.CUSTOM_FONTS.tooltip.5=paczek tekstur
+
+of.options.CUSTOM_COLORS=W?asne kolory
+of.options.CUSTOM_COLORS.tooltip.1=W?asne kolory
+of.options.CUSTOM_COLORS.tooltip.2=  W?. - u?ywa w?asnych kolorów (domy?lne), nizsza wydajno??
+of.options.CUSTOM_COLORS.tooltip.3=  Wy?. - uzywa domy?lnych kolorów, wy?sza wydajno??
+of.options.CUSTOM_COLORS.tooltip.4=W?asne kolory s? cz?sto dodawane do
+of.options.CUSTOM_COLORS.tooltip.5=paczek tekstur
+
+of.options.SWAMP_COLORS=Bagienne kolory
+of.options.SWAMP_COLORS.tooltip.1=Bagienne kolory
+of.options.SWAMP_COLORS.tooltip.2=  W?. - u?ywa kolorów bagiennych (domy?lne), ni?sza wydajno??
+of.options.SWAMP_COLORS.tooltip.3=  Wy?. - nie u?ywa kolorów baginnych, wy?sza wydajno??
+of.options.SWAMP_COLORS.tooltip.4=Kolory bagienne s? u?wane na li?ciach, trawie, winoro?lach oraz wodzie.
+
+of.options.SMOOTH_BIOMES=G?adkie biomy
+of.options.SMOOTH_BIOMES.tooltip.1=G?adkie przej?cia biomów
+of.options.SMOOTH_BIOMES.tooltip.2=  W?. - g?adkie przej?cia biomów (domy?lne), ni?sza wydajno??
+of.options.SMOOTH_BIOMES.tooltip.3=  Wy?. - brak g?adkiego przej?cia biomów, wy?sza wydajno??
+of.options.SMOOTH_BIOMES.tooltip.4=Wyg?adzanie kraw?dzi biomów dzia?a na zasadzie
+of.options.SMOOTH_BIOMES.tooltip.5=g?adkiego przej?cia kolorów li?ci, winoro?li,
+of.options.SMOOTH_BIOMES.tooltip.6=wody oraz trawy.
+
+of.options.CONNECTED_TEXTURES=Po??czone tekstury
+of.options.CONNECTED_TEXTURES.tooltip.1=Po??czone tekstury
+of.options.CONNECTED_TEXTURES.tooltip.2=  Wy?. - brak po??czonych tekstur (domy?lne)
+of.options.CONNECTED_TEXTURES.tooltip.3=  Szybka - szybkie po??czone tekstury
+of.options.CONNECTED_TEXTURES.tooltip.4=  Dok?adna - ?adne po??czone tekstury
+of.options.CONNECTED_TEXTURES.tooltip.5=Ta opcja ??czy postawione obok siebie szk?o,
+of.options.CONNECTED_TEXTURES.tooltip.6=piaskowiec i biblioteczki.
+of.options.CONNECTED_TEXTURES.tooltip.7=Po??czone tekstury s? pobierane z
+of.options.CONNECTED_TEXTURES.tooltip.8=aktualnej paczki tekstur.
+
+of.options.NATURAL_TEXTURES=Naturalne tekstury
+of.options.NATURAL_TEXTURES.tooltip.1=Naturalne tekstury
+of.options.NATURAL_TEXTURES.tooltip.2=  Wy?. - brak naturalnych tekstur (domy?lne)
+of.options.NATURAL_TEXTURES.tooltip.3=  W?. - u?ywa naturalnych tekstur
+of.options.NATURAL_TEXTURES.tooltip.4=Ta opcja usuwa wygl?daj?ce jak siatka tekstury
+of.options.NATURAL_TEXTURES.tooltip.5=stworzone poprzez u?ywanie w kó?ko tej samej tekstury.
+of.options.NATURAL_TEXTURES.tooltip.6=Ta opcje u?ywa obróconych tekstur bloków.
+of.options.NATURAL_TEXTURES.tooltip.7=Konfiguracja naturalnych tekstur jest pobierana
+of.options.NATURAL_TEXTURES.tooltip.8=z aktualnej paczki tekstur.
+
+of.options.CUSTOM_SKY=W?asne niebo
+of.options.CUSTOM_SKY.tooltip.1=W?asne niebo
+of.options.CUSTOM_SKY.tooltip.2=  W?. - tekstury w?asnego nieba w??czone (domy?lne), ni?sza wydajno??
+of.options.CUSTOM_SKY.tooltip.3=  Wy?. - domy?lne niebo, wy?sza wydajno??
+of.options.CUSTOM_SKY.tooltip.4=W?asne niebo jest pobierane
+of.options.CUSTOM_SKY.tooltip.5=z aktualnej paczki tesktur.
+
+of.options.CUSTOM_ITEMS=W?asne przedmioty
+of.options.CUSTOM_ITEMS.tooltip.1=W?asne przedmioty
+of.options.CUSTOM_ITEMS.tooltip.2=  W?. - w?asne tekstury przedmiotów (domy?lne), ni?sza wydajno??
+of.options.CUSTOM_ITEMS.tooltip.3=  Wy?. - domy?lne tesktury przedmiotów, wy?sza wydajno??
+of.options.CUSTOM_ITEMS.tooltip.4=W?asne tekstury przedmiotów s? pobierane
+of.options.CUSTOM_ITEMS.tooltip.5=z aktualnej paczki tekstur.
+
+of.options.CUSTOM_ENTITY_MODELS=W?asne modele mobów
+of.options.CUSTOM_ENTITY_MODELS.tooltip.1=W?asne modele mobów i innych podmiotów
+of.options.CUSTOM_ENTITY_MODELS.tooltip.2=  W?. - opcja w??czona (domy?lne), wolniej
+of.options.CUSTOM_ENTITY_MODELS.tooltip.3=  Wy?. - opcja wy??czona, szybciej
+of.options.CUSTOM_ENTITY_MODELS.tooltip.4=W?asne modele s? pobierane z
+of.options.CUSTOM_ENTITY_MODELS.tooltip.5=aktualnej paczki tekstur.
+
+# Details
+
+of.options.CLOUDS=Chmury
+of.options.CLOUDS.tooltip.1=Chmury
+of.options.CLOUDS.tooltip.2=  Domy?lne - dopasowane do ustawienia graficznego
+of.options.CLOUDS.tooltip.3=  Szybka - niska jako??, wysoka wydajno??
+of.options.CLOUDS.tooltip.4=  Dok?adna - wy?sza jako??, niska wydajno??
+of.options.CLOUDS.tooltip.5=  Wy?. - brak chmur, najwy?sza wydajno??
+of.options.CLOUDS.tooltip.6=Szybkie chmury s? renderowane w 2D.
+of.options.CLOUDS.tooltip.7=Dok?adne chmury s? renderowane w 3D.
+
+of.options.CLOUD_HEIGHT=Wysoko?? chmur
+of.options.CLOUD_HEIGHT.tooltip.1=Wysko?? chmur
+of.options.CLOUD_HEIGHT.tooltip.2=  Wy?. - domy?lna wysoko??
+of.options.CLOUD_HEIGHT.tooltip.3=  100%% - powy?ej limitu wysoko?ci ?wiata
+
+of.options.TREES=Drzewa
+of.options.TREES.tooltip.1=Drzewa
+of.options.TREES.tooltip.2=  Domy?lne - dostosowane do ustawienia graficznego
+of.options.TREES.tooltip.3=  Szybka - ni?sza jako??, wy?sza wydajno??
+of.options.TREES.tooltip.4=  Smart - wy?sza jako??, ni?sza wydajno??
+of.options.TREES.tooltip.5=  Dok?adna - najwy?sza jako??, najni?sza wydajno??
+of.options.TREES.tooltip.6=Szybkie drzewa maj? wype?nione li?cie.
+of.options.TREES.tooltip.7=Szybkie i smart drzewa maj? przezroczyste li?cie.
+
+of.options.RAIN=Deszcz i ?nieg
+of.options.RAIN.tooltip.1=Deszcz i ?nieg
+of.options.RAIN.tooltip.2=  Domy?lne - dostosowane do ustawienia graficznego
+of.options.RAIN.tooltip.3=  Szybka  - lekki deszcz/?nieg, wy?sza wydajno??
+of.options.RAIN.tooltip.4=  Dok?adna - ci??ki deszcz/?nieg, ni?sza wydajno??
+of.options.RAIN.tooltip.5=  Wy?. - brak deszczu/?niegu, najwy?sza wydajno??
+of.options.RAIN.tooltip.6=Gdy deszcz jest wy??czony, d?wi?ki nadal
+of.options.RAIN.tooltip.7=s? aktywne.
+
+of.options.SKY=Niebo
+of.options.SKY.tooltip.1=Niebo
+of.options.SKY.tooltip.2=  W?. - niebo jest widoczne, ni?sza wydajno??
+of.options.SKY.tooltip.3=  Wy?.  - niebo jest niewidoczne, wy?sza wydajno??
+of.options.SKY.tooltip.4=Gdy niebo jest wy??czone, s?o?ce i ksi??yc nadal s? widoczne.
+
+of.options.STARS=Gwiazdy
+of.options.STARS.tooltip.1=Gwiazdy
+of.options.STARS.tooltip.2=  W?. - gwiazdy s? widoczne, ni?sza wydajno??
+of.options.STARS.tooltip.3=  Wy?.  - gwiazdy s? niewidoczne, wy?sza wydajno??
+
+of.options.SUN_MOON=S?o?ce i Ksi??yc
+of.options.SUN_MOON.tooltip.1=S?o?ce i Ksi??yc
+of.options.SUN_MOON.tooltip.2=  W?. - s?o?ce i ksi??yc s? widoczne (domy?lne)
+of.options.SUN_MOON.tooltip.3=  Wy?.  - s?o?ce i ksi??yc s? niewidoczne (wy?sza wydajno??)
+
+of.options.SHOW_CAPES=Pokazuj peleryny
+of.options.SHOW_CAPES.tooltip.1=Pokazuj peleryny
+of.options.SHOW_CAPES.tooltip.2=  W?. - pokazuje peleryny graczy (domy?lne)
+of.options.SHOW_CAPES.tooltip.3=  Wy?. - nie pokazuje peleryn graczy
+
+of.options.TRANSLUCENT_BLOCKS=Prze?wituj?ce bloki
+of.options.TRANSLUCENT_BLOCKS.tooltip.1=Prze?wituj?ce bloki
+of.options.TRANSLUCENT_BLOCKS.tooltip.2=  Dok?adna - poprawne mieszanie kolorów (domy?lne)
+of.options.TRANSLUCENT_BLOCKS.tooltip.3=  Szybka - szybkie mieszanie kolorów (wy?sza wydajno??)
+of.options.TRANSLUCENT_BLOCKS.tooltip.4=Kontroluje mieszanie kolorów bloków przezroczystych
+of.options.TRANSLUCENT_BLOCKS.tooltip.5=w ró?nych kolorach (utawrdzone szk?o, woda, lód)
+of.options.TRANSLUCENT_BLOCKS.tooltip.6=gdy pod nimi s? bloki inne ni? powietrze.
+
+of.options.HELD_ITEM_TOOLTIPS=Nazwy trzym. przedm.
+of.options.HELD_ITEM_TOOLTIPS.tooltip.1=Nazwy trzymanych przedmiotów nad interfejsem
+of.options.HELD_ITEM_TOOLTIPS.tooltip.2=  W?. - pokazuj nazwy przedmiotów (domy?lne)
+of.options.HELD_ITEM_TOOLTIPS.tooltip.3=  Wy?. - nie pokazuj nazw przedmiotów
+
+of.options.ADVANCED_TOOLTIPS=Dok?adne dane przedmiotów
+of.options.ADVANCED_TOOLTIPS.tooltip.1=Dok?adne dane przedmiotów, bloków oraz narz?dzi
+of.options.ADVANCED_TOOLTIPS.tooltip.2=  W?. - pokazuj dok?adne dane
+of.options.ADVANCED_TOOLTIPS.tooltip.3=  Wy?. - nie pokazuj dok?adnych danych (domy?lne)
+of.options.ADVANCED_TOOLTIPS.tooltip.4=Ta opcja pokazuje wi?cej informacji o dowolnym
+of.options.ADVANCED_TOOLTIPS.tooltip.5=przedmiocie (id, wytrzyma?o??), a tak?e dane o nim
+of.options.ADVANCED_TOOLTIPS.tooltip.6=dla shaderów (id, ?ród?o, domy?lna warto??).
+
+of.options.DROPPED_ITEMS=Upuszczone przedmioty
+of.options.DROPPED_ITEMS.tooltip.1=Upuszczone przedmioty
+of.options.DROPPED_ITEMS.tooltip.2=  Domy?lne - przystosowane do ustawienia graficznego
+of.options.DROPPED_ITEMS.tooltip.3=  Szybka - upuszczone przedmioty w 2D, wy?sza wydajno??
+of.options.DROPPED_ITEMS.tooltip.4=  Dok?adna - upuszczone przedmioty w 3D, ni?sza wydajno??
+
+options.entityShadows.tooltip.1=Cienie bytów
+options.entityShadows.tooltip.2=  W?. - W??cza cienie pod bytami
+options.entityShadows.tooltip.3=  Wy?. - Wy??cza cienie pod bytami
+
+of.options.VIGNETTE=Winieta
+of.options.VIGNETTE.tooltip.1=Efekt wizualny, który delikatnie przyciemnia rogi ekranu
+of.options.VIGNETTE.tooltip.2=  Domy?lne - dostosowane do ustawienia graficznego (domy?lne)
+of.options.VIGNETTE.tooltip.3=  Szybka - winieta wy??czona (wy?sza wydajno??)
+of.options.VIGNETTE.tooltip.4=  Dok?adna - winieta w??czona (ni?sza wydajno??)
+of.options.VIGNETTE.tooltip.5=Winieta mo?e w ma?ym stopniu obni?y? FPS,
+of.options.VIGNETTE.tooltip.6=szczególnie przy grze na pe?nym ekranie.
+of.options.VIGNETTE.tooltip.7=Efekt winiety jest subtelny i mo?e by?
+of.options.VIGNETTE.tooltip.8=bezproblemowo wy??czony.
+
+of.options.DYNAMIC_FOV=Dynamiczne FOV
+of.options.DYNAMIC_FOV.tooltip.1=Dynamiczne FOV
+of.options.DYNAMIC_FOV.tooltip.2=  W?. - w??cza dynamiczne FOV (domy?lne)
+of.options.DYNAMIC_FOV.tooltip.3=  Wy?. - wy??cza dynamiczne FOV
+of.options.DYNAMIC_FOV.tooltip.4=Zmienia pole widzenia (FOV), gdy latasz 
+of.options.DYNAMIC_FOV.tooltip.5=sprintujesz lub naci?gasz ?uk.
+
+of.options.DYNAMIC_LIGHTS=Dynamiczne ?wiat?o
+of.options.DYNAMIC_LIGHTS.tooltip.1=Dynamiczne ?wiat?o
+of.options.DYNAMIC_LIGHTS.tooltip.2=  Wy?. - funkcja dynamicznego ?wiat?a wy??czona (domy?lne)
+of.options.DYNAMIC_LIGHTS.tooltip.3=  Szybka - proste dynamiczne ?wiat?a - aktualizowane co 500ms
+of.options.DYNAMIC_LIGHTS.tooltip.4=  Dok?adna - zaawansowane dynamiczne ?wiat?o - aktualizowane na bie??co
+of.options.DYNAMIC_LIGHTS.tooltip.5=Przedmioty ?wiec?ce (pochodnia, jasnopy?, itp.)
+of.options.DYNAMIC_LIGHTS.tooltip.6=o?wietlaj? teren, gdy s? w Twojej d?oni,
+of.options.DYNAMIC_LIGHTS.tooltip.7=d?oni innego gracza lub gdy s? upuszczone na pod?o?e.
+
+# Performance
+
+of.options.SMOOTH_FPS=Stabilne FPS
+of.options.SMOOTH_FPS.tooltip.1=Stablilizuje FPS poprzez oczyszczanie buforów sterownika
+of.options.SMOOTH_FPS.tooltip.2=  Wy?. - brak stabilizacji, FPS mog? oscylowa?
+of.options.SMOOTH_FPS.tooltip.3=  W?. - FPS jest stabilizowane
+of.options.SMOOTH_FPS.tooltip.4=Ta opcja jest zale?na od karty graficznej, wi?c
+of.options.SMOOTH_FPS.tooltip.5=ró?nica nie zawsze mo?e by? zauwa?alna
+
+of.options.SMOOTH_WORLD=Stabilny ?wiat
+of.options.SMOOTH_WORLD.tooltip.1=Usuwa nag?e lagi spowodowane serwerem wewn?trznym.
+of.options.SMOOTH_WORLD.tooltip.2=  Wy?. - brak stabilizacji, FPS mog? oscylowa?
+of.options.SMOOTH_WORLD.tooltip.3=  W?. - FPS jest stabilizowane
+of.options.SMOOTH_WORLD.tooltip.4=Stabilizuje FPS poprzez rozdzielenie obci??enia wewn?trznego serwera.
+of.options.SMOOTH_WORLD.tooltip.5=Dzia?a tylko w lokalnych ?wiatach (tryb jednoosobowy).
+
+of.options.FAST_RENDER=Szybkie renderowanie
+of.options.FAST_RENDER.tooltip.1=Szybkie renderowanie
+of.options.FAST_RENDER.tooltip.2= Wy?. - standardowe rederowanie (domy?lne)
+of.options.FAST_RENDER.tooltip.3= W?. - zoptymalizowane renderowanie (wy?sza wydajno??)
+of.options.FAST_RENDER.tooltip.4=U?ywa zoptymalizowanego algorytmu renderowania, który zmniejsza
+of.options.FAST_RENDER.tooltip.5=obci?zenie CPU, a tym samym zwi?ksza FPS.
+
+of.options.FAST_MATH=Szybka matematyka
+of.options.FAST_MATH.tooltip.1=Szybka matematyka
+of.options.FAST_MATH.tooltip.2= Wy?. - standardowa matematyka (domy?lne)
+of.options.FAST_MATH.tooltip.3= W?. - przyspieszona matematyka
+of.options.FAST_MATH.tooltip.4=U?ywa zoptymalizowanych dzia?a? sin() i cos(), które
+of.options.FAST_MATH.tooltip.5=lepiej wykorzystuj? pami?? procesora i zwi?ksza FPS.
+
+of.options.CHUNK_UPDATES=Aktualizacje chunków
+of.options.CHUNK_UPDATES.tooltip.1=Aktualizacje chunków
+of.options.CHUNK_UPDATES.tooltip.2= 1 - wolniejsze wczytywanie ?wiata, wi?cej FPS (domy?lne)
+of.options.CHUNK_UPDATES.tooltip.3= 3 - szybsze wczytywanie ?wiata, mniej FPS
+of.options.CHUNK_UPDATES.tooltip.4= 5 - najszybsze wczytywanie ?wiata, najmniej FPS
+of.options.CHUNK_UPDATES.tooltip.5=Liczba aktualizowanych chunków na klatk?,
+of.options.CHUNK_UPDATES.tooltip.6=wi?ksza ilo?? mo?e zmniejszy? stabilno?? FPS.
+
+of.options.CHUNK_UPDATES_DYNAMIC=Dynamiczne Aktualizacje
+of.options.CHUNK_UPDATES_DYNAMIC.tooltip.1=Dynamiczne aktualizacje chunków
+of.options.CHUNK_UPDATES_DYNAMIC.tooltip.2= Wy?. - (domy?lne) standardowa aktualizacja chunków na klatk?
+of.options.CHUNK_UPDATES_DYNAMIC.tooltip.3= W?. - wi?cej aktualizacji, gdy gracz stoi w miejscu
+of.options.CHUNK_UPDATES_DYNAMIC.tooltip.4=Dynamiczna aktualizacja wczytuje wi?cej chunków,
+of.options.CHUNK_UPDATES_DYNAMIC.tooltip.5=gdy gracz stoi w miejscu, aby szybciej za?adowa? ?wiat.
+
+of.options.LAZY_CHUNK_LOADING=Leniwe ?adow. chunków
+of.options.LAZY_CHUNK_LOADING.tooltip.1=Leniwe ?adowanie chunków
+of.options.LAZY_CHUNK_LOADING.tooltip.2= Wy?. - domy?lne wczytywanie chunków na serwerze
+of.options.LAZY_CHUNK_LOADING.tooltip.3= W?. - leniwe ?adowanie chunków na serwerze (p?ynniej)
+of.options.LAZY_CHUNK_LOADING.tooltip.4=Wyg?adza zintegrowane ?adowanie serwerowych chunków
+of.options.LAZY_CHUNK_LOADING.tooltip.5=rozdzielaj?c chunki na kilka ticków.
+of.options.LAZY_CHUNK_LOADING.tooltip.6=Wy??cz to, je?eli cz??ci ?wiata nie ?aduj? si? prawid?owo.
+of.options.LAZY_CHUNK_LOADING.tooltip.7=Efektyne tylko na lokalnych ?wiatach i jednordzeniowych komputerach.
+
+# Animations
+
+of.options.animation.allOn=W??cz wszystko
+of.options.animation.allOff=Wy??cz wszystko
+of.options.animation.dynamic=Dynamicznie
+
+of.options.ANIMATED_WATER=Animacja wody
+of.options.ANIMATED_LAVA=Animacja lawy
+of.options.ANIMATED_FIRE=Animacja ognia
+of.options.ANIMATED_PORTAL=Animacja portali
+of.options.ANIMATED_REDSTONE=Animacja czerwonego proszku
+of.options.ANIMATED_EXPLOSION=Animacja eksplozji
+of.options.ANIMATED_FLAME=Animacja p?omieni
+of.options.ANIMATED_SMOKE=Animacja dymu
+of.options.VOID_PARTICLES=Cz?steczki pró?ni
+of.options.WATER_PARTICLES=Cz?steczki wody
+of.options.RAIN_SPLASH=Cz?steczki deszczu
+of.options.PORTAL_PARTICLES=Cz?steczki portali
+of.options.POTION_PARTICLES=Cz?steczki mikstur
+of.options.DRIPPING_WATER_LAVA=Kapi?ca woda/lawa
+of.options.ANIMATED_TERRAIN=Animacja terenu
+of.options.ANIMATED_TEXTURES=Animacja tekstur
+of.options.FIREWORK_PARTICLES=Cz?steczki fajerwerków
+
+# Other
+
+of.options.LAGOMETER=Lagomierz
+of.options.LAGOMETER.tooltip.1=Pokazuje lagomierz na ekranie debugowania (F3).
+of.options.LAGOMETER.tooltip.2=* Pomara?czowy - Zaj?ta pami??
+of.options.LAGOMETER.tooltip.3=* Cyan - Ticki
+of.options.LAGOMETER.tooltip.4=* Niebieski - Zaplanowane dzia?ania
+of.options.LAGOMETER.tooltip.5=* Fioletowy - Przesy?anie chunków
+of.options.LAGOMETER.tooltip.6=* Czerwony - Aktualizacje chunków
+of.options.LAGOMETER.tooltip.7=* ?ó?ty - Kontrola widoczno?ci
+of.options.LAGOMETER.tooltip.8=* Zielony - Renderowanie terenu
+
+of.options.PROFILER=Debug Profiler
+of.options.PROFILER.tooltip.1=Debug Profiler
+of.options.PROFILER.tooltip.2=  W?. - debug profiler jest aktywny, ni?sza wydajno??
+of.options.PROFILER.tooltip.3=  Wy?. - debug profiler jest nieaktywny, wy?sza wydajno??
+of.options.PROFILER.tooltip.4=Debug profiler zbiera i pokazuje informacje debugowania,
+of.options.PROFILER.tooltip.5=gdy ekran debugowania jest w??czony. (F3)
+
+of.options.WEATHER=Pogoda
+of.options.WEATHER.tooltip.1=Pogoda
+of.options.WEATHER.tooltip.2=  W?. - pogoda jest aktywna, ni?sza wydajno??
+of.options.WEATHER.tooltip.3=  Wy?. - pogoda jest nieaktywna, wy?sza wydajno??
+of.options.WEATHER.tooltip.4=Pogoda kontroluje s?o?ce, deszcz i burz?.
+of.options.WEATHER.tooltip.5=Kontrola pogody jest aktywna tylko w trybie jednoosobowym.
+
+of.options.time.dayOnly=Jedynie dzie?
+of.options.time.nightOnly=Jedynie noc
+
+of.options.TIME=Czas
+of.options.TIME.tooltip.1=Ustawienia cyklu dnia i nocy
+of.options.TIME.tooltip.2= Domy?lne - normalny cykl dnia i nocy
+of.options.TIME.tooltip.3= Jedynie dzie? - czas zatryma si? na dniu
+of.options.TIME.tooltip.4= Jedynie noc - czas zatrzyma si? na nocy
+of.options.TIME.tooltip.5=To ustawienie dzia?a tylko w trybie kreatywnym
+of.options.TIME.tooltip.6=i tylko w lokalnych ?wiatach.
+
+options.fullscreen.tooltip.1=Pe?ny ekran
+options.fullscreen.tooltip.2=  W?. - uzywa trybu pe?ny ekran
+options.fullscreen.tooltip.3=  Wy?. - u?ywa trybu okienkowego
+options.fullscreen.tooltip.4=Tryb pe?noekranowy mo?e by? szybszy lub wolniejszy
+options.fullscreen.tooltip.5=ni? tryb okienkowy, w zale?no?ci od karty graficznej.
+
+of.options.FULLSCREEN_MODE=Tryb pe?nego ekranu
+of.options.FULLSCREEN_MODE.tooltip.1=Tryby pe?nego ekranu
+of.options.FULLSCREEN_MODE.tooltip.2=  Domy?lne - u?ywa rozdzielczo?ci pulpitu, ni?sza wydajno??
+of.options.FULLSCREEN_MODE.tooltip.3=  WxH - u?ywa wybranej rozdzielczo?ci, mo?e podwy?szy? wydajno??
+of.options.FULLSCREEN_MODE.tooltip.4=Wybrana rozdzielczo?? jest u?ywana w trybie pe?noekranowym (F11).
+of.options.FULLSCREEN_MODE.tooltip.5=Ni?sze rozdzielczo?ci mog? przyspieszy? gr?.
+
+of.options.SHOW_FPS=Pokazuj FPS
+of.options.SHOW_FPS.tooltip.1=Pokazuje kompaktow? nak?adk? FPS i informacje o renderowaniu
+of.options.SHOW_FPS.tooltip.2=  C: - renderzy chunków
+of.options.SHOW_FPS.tooltip.3=  E: - zrenderowane byty + bloki
+of.options.SHOW_FPS.tooltip.4=  U: - aktualizacje chunków
+of.options.SHOW_FPS.tooltip.5=Ta nak?adka jest wy?wietlana tylko wtedy,
+of.options.SHOW_FPS.tooltip.6=gdy ekran debugowania jest niewidoczny.
+
+of.options.save.default=Domy?lne (2s)
+of.options.save.20s=20s
+of.options.save.3min=3min
+of.options.save.30min=30min
+
+of.options.AUTOSAVE_TICKS=Autozapis
+of.options.AUTOSAVE_TICKS.tooltip.1=Cz?stotliwo?? autozapisu
+of.options.AUTOSAVE_TICKS.tooltip.2=Domy?lna cz?stotliwo?? (2s) jest NIEZALECANA.
+of.options.AUTOSAVE_TICKS.tooltip.3=Autozapisy cz?sto powoduj? ?ci?cia gry.
+
+of.options.SCREENSHOT_SIZE=Rozmiar zrzutów ekranu
+of.options.SCREENSHOT_SIZE.tooltip.1=Rozmiar zrzutów ekranu
+of.options.SCREENSHOT_SIZE.tooltip.2=  Domy?lne - domy?lny rozmiar
+of.options.SCREENSHOT_SIZE.tooltip.3=  2x-4x - w?asny rozmiar
+of.options.SCREENSHOT_SIZE.tooltip.4=Zapisywanie wi?kszych zrzutów mo?e wymaga? wi?cej pami?ci,
+of.options.SCREENSHOT_SIZE.tooltip.5=opcja nie jest kompatybilna z szybkim renderowaniem ani
+of.options.SCREENSHOT_SIZE.tooltip.6=antyaliasingiem. Wymaga wsparcia bufora ramki GPU.
