@@ -21,7 +21,8 @@ public enum Ambien {
     private ModuleManager moduleManager;
     private CommandManager commandManager;
     private Clickgui clickGui;
-
+    public String name = "Ambien", version = "X", prefix = "[" + name + "]";
+    public String[] authors = new String[] {"LCA_MODZ","Skush" };
     public final void init() {
         eventBus = new EventBus();
         settingsManager = new SettingsManager();
