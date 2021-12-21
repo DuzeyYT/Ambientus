@@ -38,9 +38,7 @@ public enum Ambien {
         heroCodeGui = new ClickGUI();
 
         fileManager = new FileManager();
-        fileManager.createMainDirectory();
-
-        System.out.println("Adolf");
+        fileManager.createMainDirectory();;
 
         eventBus.register(this);
     }
