@@ -10,7 +10,7 @@ public class PingSpoof extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-        this.setDisplayName("PingSpoof \u00A77" + " AAC");
+        this.setDisplayName("PingSpoof \u00A77" + "AAC");
     }
 
     @Override

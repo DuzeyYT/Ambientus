@@ -12,7 +12,7 @@ public class Velocity extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-        this.setDisplayName("Velocity \u00A77" + " Cancel");
+        this.setDisplayName("Velocity \u00A77" + "Cancel");
     }
 
     @Override

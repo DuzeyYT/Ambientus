@@ -11,7 +11,7 @@ public class InvCleaner extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-        this.setDisplayName("InvCleaner \u00A77" + " OpenInv");
+        this.setDisplayName("InvCleaner \u00A77" + "OpenInv");
     }
 
     @Override

@@ -19,7 +19,7 @@ public class FontManager {
     public FontManager() {
         addAll();
         defaultFront = getFont("Arial 20");
-        ambienFont = getFont("Ambien 22");
+        ambienFont = getFont("Ambien 24");
     }
 
     private void addAll() {

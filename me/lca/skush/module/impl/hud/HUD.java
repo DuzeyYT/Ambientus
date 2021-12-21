@@ -71,11 +71,11 @@ public class HUD extends Module {
                 int index = 0;
                 for(Module m : Ambien.INSTANCE.moduleManager.getModules()) {
                     if(!m.isToggled()) continue;
-                    Gui.drawRect(sr.getScaledWidth() - Ambien.INSTANCE.fontManager.ambienFont.getWidth(m.getDisplayName()) - 6,
-                            (index * 13), sr.getScaledWidth(), 13 + (index * 13), new Color(0, 0, 0).getRGB());
-                    Ambien.INSTANCE.fontManager.ambienFont.drawStringWithShadow(m.getDisplayName(), sr.getScaledWidth() - Ambien.INSTANCE.fontManager.ambienFont.getWidth(m.getDisplayName()) - 3,
-                            1.5F + (index * 13), m.getColor());
-                    Gui.drawRect(sr.getScaledWidth() - 1, (index * 13), sr.getScaledWidth(), 13 + (index * 13),
+                    Gui.drawRect(sr.getScaledWidth() - Ambien.INSTANCE.fontManager.ambienFont.getWidth(m.getDisplayName()) - 5,
+                            (index * 12.5F), sr.getScaledWidth(), 12.5F + (index * 12.5F), new Color(0, 0, 0).getRGB());
+                    Ambien.INSTANCE.fontManager.ambienFont.drawStringWithShadow(m.getDisplayName(), sr.getScaledWidth() - Ambien.INSTANCE.fontManager.ambienFont.getWidth(m.getDisplayName()) - 3.5F,
+                            1.5F + (index * 12.5F), m.getColor());
+                    Gui.drawRect(sr.getScaledWidth() - 2, (index * 12.5F), sr.getScaledWidth(), 12.5F + (index * 12.5F),
                             m.getColor());
                     index++;
                 }

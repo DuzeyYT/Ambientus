@@ -11,7 +11,7 @@ public class NoSlowDown extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-        this.setDisplayName("NoSlowDown \u00A77" + " AAC");
+        this.setDisplayName("NoSlowDown \u00A77" + "AAC");
     }
 
     @Override
