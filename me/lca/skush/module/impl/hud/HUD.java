@@ -56,10 +56,10 @@ public class HUD extends Module {
         Collections.sort(Ambien.INSTANCE.moduleManager.getModules(), new Comparator<Module>() {
             @Override
             public int compare(Module m1, Module m2) {
-                if (mc.fontRendererObj.getStringWidth(m1.getDisplayName()) > mc.fontRendererObj.getStringWidth(m2.getDisplayName())) {
+                if (Ambien.INSTANCE.fontManager.ambienFont.getWidth(m1.getDisplayName()) > Ambien.INSTANCE.fontManager.ambienFont.getWidth(m2.getDisplayName())) {
                     return -1;
                 }
-                if (mc.fontRendererObj.getStringWidth(m1.getDisplayName()) < mc.fontRendererObj.getStringWidth(m2.getDisplayName())) {
+                if (Ambien.INSTANCE.fontManager.ambienFont.getWidth(m1.getDisplayName()) < Ambien.INSTANCE.fontManager.ambienFont.getWidth(m2.getDisplayName())) {
                     return 1;
                 }
                 return 0;
