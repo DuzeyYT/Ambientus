@@ -35,6 +35,9 @@ import java.net.SocketAddress;
 import java.util.Queue;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.crypto.SecretKey;
+
+import me.lca.skush.Ambien;
+import me.lca.skush.event.impl.EventPacket;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.CryptManager;
@@ -156,11 +159,16 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
 
     protected void channelRead0(ChannelHandlerContext p_channelRead0_1_, Packet p_channelRead0_2_) throws Exception
     {
+        EventPacket eventPacket = new EventPacket(p_channelRead0_2_);
+        Ambien.INSTANCE.eventBus.post(eventPacket);
+
         if (this.channel.isOpen())
         {
             try
             {
-                p_channelRead0_2_.processPacket(this.packetListener);
+                if(!eventPacket.isCancelled()) {
+                    p_channelRead0_2_.processPacket(this.packetListener);
+                }
             }
             catch (ThreadQuickExitException var4)
             {
@@ -182,6 +190,12 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
 
     public void sendPacket(Packet packetIn)
     {
+        EventPacket eventPacket = new EventPacket(packetIn);
+        Ambien.INSTANCE.eventBus.post(eventPacket);
+
+        if(eventPacket.isCancelled())
+            return;
+
         if (this.isChannelOpen())
         {
             this.flushOutboundQueue();

@@ -24,8 +24,15 @@ public final class TimeUtil {
         lastTime = getCurrentTime();
     }
 
+    public boolean isDelayComplete(double milliseconds) {
+        return getDifference() >= milliseconds;
+    }
+
     public boolean hasTimePassed(long milliseconds) {
         return getDifference() >= milliseconds;
     }
 
+    public void setLastMS() {
+        lastTime = System.currentTimeMillis();
+    }
 }

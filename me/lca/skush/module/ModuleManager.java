@@ -1,6 +1,7 @@
 package me.lca.skush.module;
 
 import me.lca.skush.module.impl.combat.KillAura;
+import me.lca.skush.module.impl.exploits.SentinelFixer;
 import me.lca.skush.module.impl.hud.ClickGui;
 import me.lca.skush.module.impl.hud.HUD;
 import me.lca.skush.module.impl.hud.TabGUI;
@@ -28,6 +29,9 @@ public class ModuleManager {
         /* Player */
 
         /* Visual */
+
+        /* Exploits */
+        addModule(new SentinelFixer());
 
         /* HUD */
         addModule(new ClickGui());
