@@ -8,12 +8,14 @@ import me.lca.skush.interfaces.ModuleInterface;
 import me.lca.skush.module.Category;
 import me.lca.skush.module.Module;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
 
+import java.awt.*;
 import java.util.Collections;
 import java.util.Comparator;
 
-@ModuleInterface(name = "HUD", displayName = "HUD", category = Category.HUD, color = 0xFFFFFF)
+@ModuleInterface(name = "HUD", displayName = "HUD", category = Category.HUD)
 public class HUD extends Module {
 
     @Override
@@ -69,8 +71,12 @@ public class HUD extends Module {
                 int index = 0;
                 for(Module m : Ambien.INSTANCE.moduleManager.getModules()) {
                     if(!m.isToggled()) continue;
-                    fr.drawStringWithShadow(m.getDisplayName(), sr.getScaledWidth() - fr.getStringWidth(m.getDisplayName()) - 3,
-                            3 + (index * 13), m.getColor());
+                    Gui.drawRect(sr.getScaledWidth() - Ambien.INSTANCE.fontManager.ambienFont.getWidth(m.getDisplayName()) - 6,
+                            (index * 13), sr.getScaledWidth(), 13 + (index * 13), new Color(0, 0, 0).getRGB());
+                    Ambien.INSTANCE.fontManager.ambienFont.drawStringWithShadow(m.getDisplayName(), sr.getScaledWidth() - Ambien.INSTANCE.fontManager.ambienFont.getWidth(m.getDisplayName()) - 3,
+                            1.5F + (index * 13), m.getColor());
+                    Gui.drawRect(sr.getScaledWidth() - 1, (index * 13), sr.getScaledWidth(), 13 + (index * 13),
+                            m.getColor());
                     index++;
                 }
                 break;

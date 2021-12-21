@@ -10,7 +10,7 @@ import me.lca.skush.module.Module;
 
 import java.util.ArrayList;
 
-@ModuleInterface(name = "Fly", displayName = "Fly", description = "Fly", category = Category.Movement, color = 0xFFFFFF)
+@ModuleInterface(name = "Fly", displayName = "Fly", description = "Fly", category = Category.Movement)
 public class Fly extends Module {
 
     @Override
@@ -28,6 +28,8 @@ public class Fly extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
+        this.setDisplayName("Fly §7" + getSetting(this, "Fly-Mode").getValString());
+
         switch (getSetting("Fly-Mode").getValString())
         {
             case "Hypixel":
@@ -39,7 +41,6 @@ public class Fly extends Module {
             case "NCP":
                 ncp();
         }
-        Ambien.INSTANCE.sendMessage("Mode is: " + getSetting("Fly-Mode").getValString());
     }
 
 

@@ -17,5 +17,5 @@ public @interface ModuleInterface {
     String description() default "";
     int keyBind() default Keyboard.KEY_NONE;
     Category category();
-    int color() default 0xFFFFFF;
+    int color() default 0xFFFFFFFF;
 }

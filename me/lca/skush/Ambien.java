@@ -11,8 +11,12 @@ import me.lca.skush.event.impl.EventKey;
 import me.lca.skush.file.FileManager;
 import me.lca.skush.module.Module;
 import me.lca.skush.module.ModuleManager;
+import me.lca.skush.utils.fontRenderer.FontManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ChatComponentText;
+import viamcp.ViaMCP;
+
+import java.awt.*;
 
 public enum Ambien {
 
@@ -25,17 +29,24 @@ public enum Ambien {
     private Clickgui clickGui;
     public ClickGUI heroCodeGui;
     public FileManager fileManager;
+    public FontManager fontManager;
 
     public String name = "Ambien", version = "X", prefix = "[" + name + "]";
     public String[] authors = new String[] {"LCA_MODZ","Skush"};
 
     public final void init() {
+        /* ViaVersion */
+        try {
+            ViaMCP.getInstance().start();
+        } catch (Exception e) { e.printStackTrace(); }
+
         eventBus = new EventBus();
         settingsManager = new SettingsManager();
         moduleManager = new ModuleManager();
         commandManager = new CommandManager();
         clickGui = new Clickgui();
         heroCodeGui = new ClickGUI();
+        fontManager = new FontManager();
 
         fileManager = new FileManager();
         fileManager.createMainDirectory();

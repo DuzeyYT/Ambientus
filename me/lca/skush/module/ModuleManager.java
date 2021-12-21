@@ -3,6 +3,7 @@ package me.lca.skush.module;
 import me.lca.skush.module.impl.combat.KillAura;
 import me.lca.skush.module.impl.hud.ClickGui;
 import me.lca.skush.module.impl.hud.HUD;
+import me.lca.skush.module.impl.hud.TabGUI;
 import me.lca.skush.module.impl.movement.Fly;
 import me.lca.skush.module.impl.movement.Sprint;
 
@@ -31,6 +32,7 @@ public class ModuleManager {
         /* HUD */
         addModule(new ClickGui());
         addModule(new HUD());
+        addModule(new TabGUI());
     }
 
     private void addModule(Module mod) {

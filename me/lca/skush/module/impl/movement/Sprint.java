@@ -6,7 +6,7 @@ import me.lca.skush.interfaces.ModuleInterface;
 import me.lca.skush.module.Category;
 import me.lca.skush.module.Module;
 
-@ModuleInterface(name = "Sprint", displayName = "Sprint", description = "Will automatically Sprint", category = Category.Movement, color = 0xFFFFFF)
+@ModuleInterface(name = "Sprint", displayName = "Sprint", description = "Will automatically Sprint", category = Category.Movement)
 public class Sprint extends Module {
 
     @Subscribe
@@ -21,5 +21,4 @@ public class Sprint extends Module {
         super.onDisable();
         mc.thePlayer.setSprinting(false);
     }
-
 }
