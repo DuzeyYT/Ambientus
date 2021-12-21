@@ -11,7 +11,7 @@ public class Module implements MinecraftInterface {
     private String name = moduleInterface.name(), description = moduleInterface.description();
     private Category category = moduleInterface.category();
     private int color = moduleInterface.color();
-    private int key;
+    private int key = moduleInterface.keyBind();
     private boolean toggled;
 
     public Module() {
@@ -74,6 +74,10 @@ public class Module implements MinecraftInterface {
 
     public final boolean isToggled() {
         return toggled;
+    }
+
+    public final int getColor() {
+        return color;
     }
 
     public final Category getCategory() {

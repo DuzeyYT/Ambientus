@@ -3,6 +3,8 @@ package me.lca.skush.clickgui.setting;
 import me.lca.skush.module.Module;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  *  Made by HeroCode
@@ -26,7 +28,7 @@ public class Setting {
 	private double min;
 	private double max;
 	private boolean onlyint = false;
-	
+
 
 	public Setting(String name, Module parent, String sval, ArrayList<String> options){
 		this.name = name;
@@ -35,7 +37,19 @@ public class Setting {
 		this.options = options;
 		this.mode = "Combo";
 	}
-	
+
+	public Setting(String name, Module parent, String sval, String[] options){
+		this.name = name;
+		this.parent = parent;
+		this.sval = sval;
+
+		List<String> list = new ArrayList<>();
+		Collections.addAll(list, options);
+		this.options = (ArrayList<String>)list;
+
+		this.mode = "Combo";
+	}
+
 	public Setting(String name, Module parent, boolean bval){
 		this.name = name;
 		this.parent = parent;

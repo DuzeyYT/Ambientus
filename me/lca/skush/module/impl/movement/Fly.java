@@ -10,7 +10,7 @@ import me.lca.skush.module.Module;
 
 import java.util.ArrayList;
 
-@ModuleInterface(name = "Fly", description = "Fly", category = Category.Movement)
+@ModuleInterface(name = "Fly", description = "Fly", category = Category.Movement, color = 0xFFFFFF)
 public class Fly extends Module {
 
     @Override
