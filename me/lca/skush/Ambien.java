@@ -1,18 +1,18 @@
-package me.exeos;
+package me.lca.skush;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
-import me.exeos.clickgui.Clickgui;
-import me.exeos.clickgui.setting.SettingsManager;
-import me.exeos.command.CommandManager;
-import me.exeos.event.impl.EventChat;
-import me.exeos.event.impl.EventKey;
-import me.exeos.module.Module;
-import me.exeos.module.ModuleManager;
+import me.lca.skush.clickgui.Clickgui;
+import me.lca.skush.clickgui.setting.SettingsManager;
+import me.lca.skush.command.CommandManager;
+import me.lca.skush.event.impl.EventChat;
+import me.lca.skush.event.impl.EventKey;
+import me.lca.skush.module.Module;
+import me.lca.skush.module.ModuleManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ChatComponentText;
 
-public enum Tutorial {
+public enum Ambien {
 
     INSTANCE;
 
