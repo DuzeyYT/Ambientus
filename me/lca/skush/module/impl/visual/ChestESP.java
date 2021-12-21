@@ -11,7 +11,7 @@ public class ChestESP extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-
+        this.setDisplayName("ChestESP \u00A77" + " Shader");
     }
 
     @Override

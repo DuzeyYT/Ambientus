@@ -10,7 +10,7 @@ public class AutoArmor extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-
+        this.setDisplayName("AutoArmor \u00A77" + " OpenInv");
     }
 
     @Override
