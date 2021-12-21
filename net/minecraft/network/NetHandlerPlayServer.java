@@ -40,29 +40,7 @@ import net.minecraft.item.ItemWritableBook;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagString;
 import net.minecraft.network.play.INetHandlerPlayServer;
-import net.minecraft.network.play.client.C00PacketKeepAlive;
-import net.minecraft.network.play.client.C01PacketChatMessage;
-import net.minecraft.network.play.client.C02PacketUseEntity;
-import net.minecraft.network.play.client.C03PacketPlayer;
-import net.minecraft.network.play.client.C07PacketPlayerDigging;
-import net.minecraft.network.play.client.C08PacketPlayerBlockPlacement;
-import net.minecraft.network.play.client.C09PacketHeldItemChange;
-import net.minecraft.network.play.client.C0APacketAnimation;
-import net.minecraft.network.play.client.C0BPacketEntityAction;
-import net.minecraft.network.play.client.C0CPacketInput;
-import net.minecraft.network.play.client.C0DPacketCloseWindow;
-import net.minecraft.network.play.client.C0EPacketClickWindow;
-import net.minecraft.network.play.client.C0FPacketConfirmTransaction;
-import net.minecraft.network.play.client.C10PacketCreativeInventoryAction;
-import net.minecraft.network.play.client.C11PacketEnchantItem;
-import net.minecraft.network.play.client.C12PacketUpdateSign;
-import net.minecraft.network.play.client.C13PacketPlayerAbilities;
-import net.minecraft.network.play.client.C14PacketTabComplete;
-import net.minecraft.network.play.client.C15PacketClientSettings;
-import net.minecraft.network.play.client.C16PacketClientStatus;
-import net.minecraft.network.play.client.C17PacketCustomPayload;
-import net.minecraft.network.play.client.C18PacketSpectate;
-import net.minecraft.network.play.client.C19PacketResourcePackStatus;
+import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.S00PacketKeepAlive;
 import net.minecraft.network.play.server.S02PacketChat;
 import net.minecraft.network.play.server.S07PacketRespawn;
@@ -838,6 +816,14 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer, ITickable
         this.playerEntity.markPlayerActive();
         this.playerEntity.swingItem();
     }
+
+    public void handleHandAnimation(CAnimateHandPacket packetIn)
+    {
+        PacketThreadUtil.checkThreadAndEnqueue(packetIn, this, this.playerEntity.getServerForPlayer());
+        this.playerEntity.markPlayerActive();
+        this.playerEntity.swingItem();
+    }
+
 
     /**
      * Processes a range of action-types: sneaking, sprinting, waking from sleep, opening the inventory or setting jump

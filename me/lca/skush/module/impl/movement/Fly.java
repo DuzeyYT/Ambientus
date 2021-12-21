@@ -28,12 +28,13 @@ public class Fly extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-        this.setDisplayName("Fly §7" + getSetting(this, "Fly-Mode").getValString());
+        this.setDisplayName("Fly \u00A77" + getSetting(this, "Fly-Mode").getValString());
 
         switch (getSetting("Fly-Mode").getValString())
         {
             case "Hypixel":
-                hypixel();
+                mc.thePlayer.motionY = 0;
+               // mc.thePlayer.jump();
                 break;
             case "AAC":
                 aac();
@@ -46,6 +47,7 @@ public class Fly extends Module {
 
     private final void hypixel() {
         mc.thePlayer.motionY = 0;
+        mc.thePlayer.jump();
     }
 
     private final void aac() {

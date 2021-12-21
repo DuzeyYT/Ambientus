@@ -103,7 +103,7 @@ public class GuiAltManager extends GuiScreen {
 
         Ambien.INSTANCE.fontManager.ambienFont.drawStringWithShadow("Email:", 10, 36, 0xffffffff);
         Ambien.INSTANCE.fontManager.ambienFont.drawStringWithShadow("Password:", 10, 86, 0xffffffff);
-        Ambien.INSTANCE.fontManager.ambienFont.drawStringWithShadow("§3Logged in with §a" + mc.session.getUsername(),
+        Ambien.INSTANCE.fontManager.ambienFont.drawStringWithShadow("Logged in with " + mc.session.getUsername(),
                 width / 2, 20, 0xffffffff);
 
         email.drawTextBox();

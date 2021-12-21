@@ -33,15 +33,7 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.play.client.C01PacketChatMessage;
-import net.minecraft.network.play.client.C03PacketPlayer;
-import net.minecraft.network.play.client.C07PacketPlayerDigging;
-import net.minecraft.network.play.client.C0APacketAnimation;
-import net.minecraft.network.play.client.C0BPacketEntityAction;
-import net.minecraft.network.play.client.C0CPacketInput;
-import net.minecraft.network.play.client.C0DPacketCloseWindow;
-import net.minecraft.network.play.client.C13PacketPlayerAbilities;
-import net.minecraft.network.play.client.C16PacketClientStatus;
+import net.minecraft.network.play.client.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.stats.StatBase;
 import net.minecraft.stats.StatFileWriter;
@@ -55,6 +47,7 @@ import net.minecraft.util.MovementInput;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
+import viamcp.ViaMCP;
 
 public class EntityPlayerSP extends AbstractClientPlayer
 {
@@ -314,10 +307,13 @@ public class EntityPlayerSP extends AbstractClientPlayer
     /**
      * Swings the item the player is holding.
      */
-    public void swingItem()
-    {
+    public void swingItem() {
         super.swingItem();
-        this.sendQueue.addToSendQueue(new C0APacketAnimation());
+        if (ViaMCP.PROTOCOL_VERSION == 47) {
+            this.sendQueue.addToSendQueue(new C0APacketAnimation());
+        } else {
+            this.sendQueue.addToSendQueue(new CAnimateHandPacket(Hand.MAIN_HAND));
+        }
     }
 
     public void respawnPlayer()

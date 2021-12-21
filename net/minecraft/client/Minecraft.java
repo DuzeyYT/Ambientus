@@ -180,6 +180,7 @@ import org.lwjgl.opengl.GLContext;
 import org.lwjgl.opengl.OpenGLException;
 import org.lwjgl.opengl.PixelFormat;
 import org.lwjgl.util.glu.GLU;
+import viamcp.ViaMCP;
 
 public class Minecraft implements IThreadListener, IPlayerUsage
 {
@@ -1494,45 +1495,74 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         }
     }
 
-    private void clickMouse()
-    {
-        if (this.leftClickCounter <= 0)
-        {
-            this.thePlayer.swingItem();
+    public void clickMouse() {
+        if (ViaMCP.PROTOCOL_VERSION == 47) {
+            if (this.leftClickCounter <= 0) {
+                try {
+                    this.thePlayer.swingItem();
+                } catch (Exception e) {
+                }
 
-            if (this.objectMouseOver == null)
-            {
-                logger.error("Null returned as \'hitResult\', this shouldn\'t happen!");
+                if (this.objectMouseOver == null) {
+                    logger.error("Null returned as 'hitResult', this shouldn't happen!");
 
-                if (this.playerController.isNotCreative())
-                {
-                    this.leftClickCounter = 10;
+                    if (this.playerController.isNotCreative()) {
+                        this.leftClickCounter = 10;
+                    }
+                } else {
+                    switch (this.objectMouseOver.typeOfHit) {
+                        case ENTITY:
+                            this.playerController.attackEntity(this.thePlayer, this.objectMouseOver.entityHit);
+                            break;
+                        case BLOCK:
+                            BlockPos blockpos = this.objectMouseOver.getBlockPos();
+
+                            if (this.theWorld.getBlockState(blockpos).getBlock().getMaterial() != Material.air) {
+                                this.playerController.clickBlock(blockpos, this.objectMouseOver.sideHit);
+                                break;
+                            }
+                        case MISS:
+                        default:
+                            if (this.playerController.isNotCreative()) {
+                                this.leftClickCounter = 10;
+                            }
+                    }
                 }
             }
-            else
-            {
-                switch (this.objectMouseOver.typeOfHit)
-                {
-                    case ENTITY:
-                        this.playerController.attackEntity(this.thePlayer, this.objectMouseOver.entityHit);
-                        break;
+        } else {
+            if (this.leftClickCounter <= 0) {
 
-                    case BLOCK:
-                        BlockPos blockpos = this.objectMouseOver.getBlockPos();
+                if (this.objectMouseOver == null) {
+                    logger.error("Null returned as 'hitResult', this shouldn't happen!");
 
-                        if (this.theWorld.getBlockState(blockpos).getBlock().getMaterial() != Material.air)
-                        {
-                            this.playerController.clickBlock(blockpos, this.objectMouseOver.sideHit);
+                    if (this.playerController.isNotCreative()) {
+                        this.leftClickCounter = 10;
+                    }
+                } else {
+                    switch (this.objectMouseOver.typeOfHit) {
+                        case ENTITY:
+                            this.playerController.attackEntity(this.thePlayer, this.objectMouseOver.entityHit);
                             break;
-                        }
 
-                    case MISS:
-                    default:
-                        if (this.playerController.isNotCreative())
-                        {
-                            this.leftClickCounter = 10;
-                        }
+                        case BLOCK:
+                            BlockPos blockpos = this.objectMouseOver.getBlockPos();
+
+                            if (this.theWorld.getBlockState(blockpos).getBlock().getMaterial() != Material.air) {
+                                this.playerController.clickBlock(blockpos, this.objectMouseOver.sideHit);
+                                break;
+                            }
+
+                        case MISS:
+                        default:
+                            if (this.playerController.isNotCreative()) {
+                                this.leftClickCounter = 10;
+                            }
+                    }
                 }
+            }
+            try {
+                this.thePlayer.swingItem();
+            } catch (Exception e) {
             }
         }
     }
@@ -1544,72 +1574,117 @@ public class Minecraft implements IThreadListener, IPlayerUsage
      */
     private void rightClickMouse()
     {
-        if (!this.playerController.func_181040_m())
-        {
-            this.rightClickDelayTimer = 4;
-            boolean flag = true;
-            ItemStack itemstack = this.thePlayer.inventory.getCurrentItem();
+        if(ViaMCP.PROTOCOL_VERSION == 47) {
+            if (!this.playerController.func_181040_m()) {
+                this.rightClickDelayTimer = 4;
+                boolean flag = true;
+                ItemStack itemstack = this.thePlayer.inventory.getCurrentItem();
 
-            if (this.objectMouseOver == null)
-            {
-                logger.warn("Null returned as \'hitResult\', this shouldn\'t happen!");
-            }
-            else
-            {
-                switch (this.objectMouseOver.typeOfHit)
-                {
-                    case ENTITY:
-                        if (this.playerController.func_178894_a(this.thePlayer, this.objectMouseOver.entityHit, this.objectMouseOver))
-                        {
-                            flag = false;
-                        }
-                        else if (this.playerController.interactWithEntitySendPacket(this.thePlayer, this.objectMouseOver.entityHit))
-                        {
-                            flag = false;
-                        }
-
-                        break;
-
-                    case BLOCK:
-                        BlockPos blockpos = this.objectMouseOver.getBlockPos();
-
-                        if (this.theWorld.getBlockState(blockpos).getBlock().getMaterial() != Material.air)
-                        {
-                            int i = itemstack != null ? itemstack.stackSize : 0;
-
-                            if (this.playerController.onPlayerRightClick(this.thePlayer, this.theWorld, itemstack, blockpos, this.objectMouseOver.sideHit, this.objectMouseOver.hitVec))
-                            {
+                if (this.objectMouseOver == null) {
+                    logger.warn("Null returned as \'hitResult\', this shouldn\'t happen!");
+                } else {
+                    switch (this.objectMouseOver.typeOfHit) {
+                        case ENTITY:
+                            if (this.playerController.func_178894_a(this.thePlayer, this.objectMouseOver.entityHit, this.objectMouseOver)) {
                                 flag = false;
-                                this.thePlayer.swingItem();
+                            } else if (this.playerController.interactWithEntitySendPacket(this.thePlayer, this.objectMouseOver.entityHit)) {
+                                flag = false;
                             }
 
-                            if (itemstack == null)
-                            {
-                                return;
-                            }
+                            break;
 
-                            if (itemstack.stackSize == 0)
-                            {
-                                this.thePlayer.inventory.mainInventory[this.thePlayer.inventory.currentItem] = null;
+                        case BLOCK:
+                            BlockPos blockpos = this.objectMouseOver.getBlockPos();
+
+                            if (this.theWorld.getBlockState(blockpos).getBlock().getMaterial() != Material.air) {
+                                int i = itemstack != null ? itemstack.stackSize : 0;
+
+                                if (this.playerController.onPlayerRightClick(this.thePlayer, this.theWorld, itemstack, blockpos, this.objectMouseOver.sideHit, this.objectMouseOver.hitVec)) {
+                                    flag = false;
+                                    this.thePlayer.swingItem();
+                                }
+
+                                if (itemstack == null) {
+                                    return;
+                                }
+
+                                if (itemstack.stackSize == 0) {
+                                    this.thePlayer.inventory.mainInventory[this.thePlayer.inventory.currentItem] = null;
+                                } else if (itemstack.stackSize != i || this.playerController.isInCreativeMode()) {
+                                    this.entityRenderer.itemRenderer.resetEquippedProgress();
+                                }
                             }
-                            else if (itemstack.stackSize != i || this.playerController.isInCreativeMode())
-                            {
-                                this.entityRenderer.itemRenderer.resetEquippedProgress();
-                            }
+                    }
+                }
+
+                if (flag) {
+                    ItemStack itemstack1 = this.thePlayer.inventory.getCurrentItem();
+
+                    if (itemstack1 != null && this.playerController.sendUseItem(this.thePlayer, this.theWorld, itemstack1)) {
+                        this.entityRenderer.itemRenderer.resetEquippedProgress2();
+                    }
+                }
+            }
+        }else{
+
+                if (!this.playerController.func_181040_m()) {
+                    this.rightClickDelayTimer = 4;
+                    boolean flag = true;
+                    ItemStack itemstack = this.thePlayer.inventory.getCurrentItem();
+
+                    if (this.objectMouseOver == null) {
+                        logger.warn("Null returned as 'hitResult', this shouldn't happen!");
+                    } else {
+                        switch (this.objectMouseOver.typeOfHit) {
+                            case ENTITY:
+                                if (this.playerController.func_178894_a(this.thePlayer, this.objectMouseOver.entityHit,
+                                        this.objectMouseOver)) {
+                                    flag = false;
+                                } else if (this.playerController.interactWithEntitySendPacket(this.thePlayer,
+                                        this.objectMouseOver.entityHit)) {
+                                    flag = false;
+                                }
+
+                                break;
+
+                            case BLOCK:
+                                BlockPos blockpos = this.objectMouseOver.getBlockPos();
+
+                                if (this.theWorld.getBlockState(blockpos).getBlock().getMaterial() != Material.air) {
+                                    int i = itemstack != null ? itemstack.stackSize : 0;
+
+                                    if (this.playerController.onPlayerRightClick(this.thePlayer, this.theWorld, itemstack, blockpos,
+                                            this.objectMouseOver.sideHit, this.objectMouseOver.hitVec)) {
+                                        this.thePlayer.swingItem();
+                                        flag = false;
+
+                                    }
+
+                                    if (itemstack == null) {
+                                        return;
+                                    }
+
+                                    if (itemstack.stackSize == 0) {
+                                        this.thePlayer.inventory.mainInventory[this.thePlayer.inventory.currentItem] = null;
+                                    } else if (itemstack.stackSize != i || this.playerController.isInCreativeMode()) {
+                                        this.entityRenderer.itemRenderer.resetEquippedProgress();
+                                    }
+                                }
                         }
+                    }
+
+                    if (flag) {
+                        ItemStack itemstack1 = this.thePlayer.inventory.getCurrentItem();
+
+                        if (itemstack1 != null
+                                && this.playerController.sendUseItem(this.thePlayer, this.theWorld, itemstack1)) {
+                            this.entityRenderer.itemRenderer.resetEquippedProgress2();
+                        }
+                    }
                 }
             }
 
-            if (flag)
-            {
-                ItemStack itemstack1 = this.thePlayer.inventory.getCurrentItem();
 
-                if (itemstack1 != null && this.playerController.sendUseItem(this.thePlayer, this.theWorld, itemstack1))
-                {
-                    this.entityRenderer.itemRenderer.resetEquippedProgress2();
-                }
-            }
-        }
     }
 
     /**
