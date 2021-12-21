@@ -9,6 +9,7 @@ public class Module implements MinecraftInterface {
 
     private ModuleInterface moduleInterface = getClass().getAnnotation(ModuleInterface.class);
     private String name = moduleInterface.name(), description = moduleInterface.description();
+    private String displayName = moduleInterface.displayName();
     private Category category = moduleInterface.category();
     private int color = moduleInterface.color();
     private int key = moduleInterface.keyBind();
@@ -60,6 +61,10 @@ public class Module implements MinecraftInterface {
         return name;
     }
 
+    public final String getDisplayName() {
+        return displayName;
+    }
+
     public final String getDescription() {
         return description;
     }
@@ -70,6 +75,10 @@ public class Module implements MinecraftInterface {
 
     public final void setKey(int key) {
         this.key = key;
+    }
+
+    public final void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public final boolean isToggled() {

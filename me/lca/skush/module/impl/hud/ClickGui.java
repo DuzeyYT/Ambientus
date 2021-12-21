@@ -8,7 +8,7 @@ import me.lca.skush.module.Module;
 
 import java.util.ArrayList;
 
-@ModuleInterface(name = "ClickGui", description = "UI for mods and setting", category = Category.HUD, color = 0xFFFFFF)
+@ModuleInterface(name = "ClickGui", displayName = "ClickGui", description = "UI for mods and setting", category = Category.HUD, color = 0xFFFFFF)
 public class ClickGui extends Module {
 
     @Override

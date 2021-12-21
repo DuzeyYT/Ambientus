@@ -2,6 +2,7 @@ package me.lca.skush.module;
 
 import me.lca.skush.module.impl.combat.KillAura;
 import me.lca.skush.module.impl.hud.ClickGui;
+import me.lca.skush.module.impl.hud.HUD;
 import me.lca.skush.module.impl.movement.Fly;
 import me.lca.skush.module.impl.movement.Sprint;
 
@@ -16,17 +17,24 @@ public class ModuleManager {
     }
 
     public void init() {
-        // Combat
-        modules.add(new KillAura());
-        // Movement
-        modules.add(new Sprint());
-        modules.add(new Fly());
-        // Player
+        /* Combat */
+        addModule(new KillAura());
 
-        // Visual
+        /* Movement */
+        addModule(new Sprint());
+        addModule(new Fly());
 
-        // HUD
-        modules.add(new ClickGui());
+        /* Player */
+
+        /* Visual */
+
+        /* HUD */
+        addModule(new ClickGui());
+        addModule(new HUD());
+    }
+
+    private void addModule(Module mod) {
+        modules.add(mod);
     }
 
     public ArrayList<Module> getModules() {
@@ -45,5 +53,4 @@ public class ModuleManager {
     public Module getModule(String name) {
         return modules.stream().filter(module -> module.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
     }
-
 }

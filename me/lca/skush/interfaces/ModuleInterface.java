@@ -12,8 +12,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ModuleInterface {
     String name();
+    String displayName();
     String description() default "";
     int keyBind() default Keyboard.KEY_NONE;
     Category category();
-    int color();
+    int color() default 0xFFFFFF;
 }
