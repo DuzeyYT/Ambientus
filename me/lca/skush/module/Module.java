@@ -29,13 +29,6 @@ public class Module implements MinecraftInterface {
             onEnable();
         else
             onDisable();
-        //if (toggled) {
-        //    onDisable();
-        //    toggled = false;
-        //} else {
-        //    onEnable();
-        //    toggled = true;
-        //}
     }
 
     public final void setToggled(boolean toggled) {
