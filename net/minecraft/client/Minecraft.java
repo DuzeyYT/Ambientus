@@ -354,8 +354,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
     public Minecraft(GameConfiguration gameConfig)
     {
         theMinecraft = this;
-        /*this.mcDataDir = gameConfig.folderInfo.mcDataDir;*/
-        this.mcDataDir = new File(System.getProperty("user.name") + "\\AppData\\Roaming\\.minecraft");
+        this.mcDataDir = gameConfig.folderInfo.mcDataDir;
         this.fileAssets = gameConfig.folderInfo.assetsDir;
         this.fileResourcepacks = gameConfig.folderInfo.resourcePacksDir;
         this.launchedVersion = gameConfig.gameInfo.version;

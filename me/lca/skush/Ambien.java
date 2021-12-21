@@ -38,7 +38,8 @@ public enum Ambien {
         heroCodeGui = new ClickGUI();
 
         fileManager = new FileManager();
-        fileManager.createMainDirectory();;
+        fileManager.createMainDirectory();
+        fileManager.loadModules();
 
         eventBus.register(this);
     }
@@ -74,7 +75,8 @@ public enum Ambien {
     }
 
     public final void sendMessage(String message) {
-        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Tutorial: " + message));
+        if(Minecraft.getMinecraft().thePlayer == null) return;
+        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Ambien.INSTANCE.name + " " + Ambien.INSTANCE.version + ": " + message));
     }
     public final Clickgui getClickGui() {
         return clickGui;

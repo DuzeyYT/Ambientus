@@ -60,6 +60,7 @@ public class KillAura extends Module {
     @Override
     public void onEnable() {
         super.onEnable();
+        if(mc.thePlayer == null) return;
         yaw = mc.thePlayer.rotationYaw;
         pitch = mc.thePlayer.rotationYaw;
         target = null;

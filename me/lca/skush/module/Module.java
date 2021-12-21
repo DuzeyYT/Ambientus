@@ -46,11 +46,13 @@ public class Module implements MinecraftInterface {
     public void onEnable() {
         Ambien.INSTANCE.getEventBus().register(this);
         Ambien.INSTANCE.sendMessage("Enabled: " + this.name);
+        Ambien.INSTANCE.fileManager.saveModules();
     }
 
     public void onDisable() {
         Ambien.INSTANCE.getEventBus().unregister(this);
         Ambien.INSTANCE.sendMessage("Disabled: " + this.name);
+        Ambien.INSTANCE.fileManager.saveModules();
     }
 
     public void addSetting(Setting set) {
