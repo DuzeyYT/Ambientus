@@ -1,12 +1,17 @@
 package me.lca.skush.module;
 
 import me.lca.skush.module.impl.combat.KillAura;
+import me.lca.skush.module.impl.combat.Velocity;
 import me.lca.skush.module.impl.exploits.SentinelFixer;
 import me.lca.skush.module.impl.hud.ClickGui;
 import me.lca.skush.module.impl.hud.HUD;
 import me.lca.skush.module.impl.hud.TabGUI;
 import me.lca.skush.module.impl.movement.Fly;
+import me.lca.skush.module.impl.movement.InventoryMove;
+import me.lca.skush.module.impl.movement.NoSlowDown;
 import me.lca.skush.module.impl.movement.Sprint;
+import me.lca.skush.module.impl.player.*;
+import me.lca.skush.module.impl.visual.*;
 
 import java.util.ArrayList;
 
@@ -21,18 +26,27 @@ public class ModuleManager {
     public void init() {
         /* Combat */
         addModule(new KillAura());
-
+        addModule(new Velocity());
+        /* Exploit */
+        addModule(new SentinelFixer());
         /* Movement */
         addModule(new Sprint());
         addModule(new Fly());
-
+        addModule(new InventoryMove());
+        addModule(new NoSlowDown());
         /* Player */
-
+        addModule(new AutoArmor());
+        addModule(new InvManager());
+        addModule(new InvCleaner());
+        addModule(new ChestStealer());
+        addModule(new MiddleClick());
+        addModule(new PingSpoof());
         /* Visual */
-
-        /* Exploits */
-        addModule(new SentinelFixer());
-
+        addModule(new BedESP());
+        addModule(new ESP());
+        addModule(new ChestESP());
+        addModule(new ItemPhysics());
+        addModule(new NameTags());
         /* HUD */
         addModule(new ClickGui());
         addModule(new HUD());

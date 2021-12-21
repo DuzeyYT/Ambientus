@@ -14,7 +14,7 @@ import net.minecraft.entity.EntityLivingBase;
 
 import java.awt.*;
 
-@ModuleInterface(name = "KillAura", displayName = "KillAura", description = "Attacks Entitys", category = Category.Combat, color = 0xFF32a852)
+@ModuleInterface(name = "KillAura", displayName = "KillAura", description = "Attacks Entitys", category = Category.Combat, color = 0xFFb8d81c)
 public class KillAura extends Module {
 
     public static float yaw, pitch;

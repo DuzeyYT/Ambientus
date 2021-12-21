@@ -6,19 +6,17 @@ import me.lca.skush.interfaces.ModuleInterface;
 import me.lca.skush.module.Category;
 import me.lca.skush.module.Module;
 
-@ModuleInterface(name = "Sprint", displayName = "Sprint", description = "Will automatically Sprint", category = Category.Movement, color = 0xFFbc78cf)
-public class Sprint extends Module {
+@ModuleInterface(name = "NoSlowDown", displayName = "NoSlowDown", description = "Not Slowing Down", category = Category.Movement, color = 0xFFc0cd44)
+public class NoSlowDown extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-        if (!mc.thePlayer.isCollidedHorizontally && mc.thePlayer.moveForward > 0) {
-            mc.thePlayer.setSprinting(true);
-        }
+
     }
 
     @Override
     public void onDisable() {
         super.onDisable();
-        mc.thePlayer.setSprinting(false);
+
     }
 }
