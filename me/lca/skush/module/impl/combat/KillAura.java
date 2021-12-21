@@ -12,7 +12,9 @@ import me.lca.skush.utils.RotationUtil;
 import me.lca.skush.utils.TimeUtil;
 import net.minecraft.entity.EntityLivingBase;
 
-@ModuleInterface(name = "KillAura", displayName = "KillAura", description = "Attacks Entitys", category = Category.Combat, color = 0xFFFFFF)
+import java.awt.*;
+
+@ModuleInterface(name = "KillAura", displayName = "KillAura", description = "Attacks Entitys", category = Category.Combat, color = 0xFF32a852)
 public class KillAura extends Module {
 
     public static float yaw, pitch;
