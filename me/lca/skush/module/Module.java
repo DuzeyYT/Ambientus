@@ -10,6 +10,7 @@ public class Module implements MinecraftInterface {
     private ModuleInterface moduleInterface = getClass().getAnnotation(ModuleInterface.class);
     private String name = moduleInterface.name(), description = moduleInterface.description();
     private Category category = moduleInterface.category();
+    private int color = moduleInterface.color();
     private int key;
     private boolean toggled;
 

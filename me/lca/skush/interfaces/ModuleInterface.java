@@ -13,4 +13,5 @@ public @interface ModuleInterface {
     String name();
     String description();
     Category category();
+    int color();
 }
