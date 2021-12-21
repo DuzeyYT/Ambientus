@@ -11,7 +11,7 @@ public class InventoryMove extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-
+        this.setDisplayName("InventoryMove \u00A77" + " AACP");
     }
 
     @Override

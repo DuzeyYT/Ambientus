@@ -15,7 +15,7 @@ import java.awt.*;
 import java.util.Collections;
 import java.util.Comparator;
 
-@ModuleInterface(name = "HUD", displayName = "HUD", category = Category.HUD)
+@ModuleInterface(name = "HUD", displayName = "HUD", category = Category.HUD,color = 0xFFbf5002)
 public class HUD extends Module {
 
     @Override

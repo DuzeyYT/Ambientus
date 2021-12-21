@@ -11,7 +11,7 @@ public class ESP extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-
+        this.setDisplayName("ESP \u00A77" + " Shader");
     }
 
     @Override

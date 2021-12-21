@@ -11,7 +11,7 @@ public class InvManager extends Module {
 
     @Subscribe
     public void onUpdate(EventUpdate e) {
-
+        this.setDisplayName("InvManager \u00A77" + " OpenInv");
     }
 
     @Override

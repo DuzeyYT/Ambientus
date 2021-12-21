@@ -14,7 +14,7 @@ import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 
-@ModuleInterface(name = "TabGUI", displayName = "TabGUI", category = Category.HUD)
+@ModuleInterface(name = "TabGUI", displayName = "TabGUI", category = Category.HUD, color = 0xFFbf5002)
 public class TabGUI extends Module {
 
     @Subscribe
