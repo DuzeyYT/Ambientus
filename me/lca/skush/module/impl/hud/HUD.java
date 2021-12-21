@@ -29,7 +29,7 @@ public class HUD extends Module {
 
     @Subscribe
     public void onRender(Event2D event) {
-        renderWatermark();
+       // renderWatermark();
         renderArrayList();
     }
 
