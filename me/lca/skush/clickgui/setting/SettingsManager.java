@@ -50,4 +50,13 @@ public class SettingsManager {
 		return null;
 	}
 
+	public Setting getSettingByMod(Module mod, String name) {
+		ArrayList<Setting> out = new ArrayList<Setting>();
+		for(Setting settings : getSettings()) {
+			if(settings.getParentMod().equals(mod) && settings.getName().equalsIgnoreCase(name)) {
+				return settings;
+			}
+		}
+		return null;
+	}
 }

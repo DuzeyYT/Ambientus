@@ -51,6 +51,10 @@ public class Module implements MinecraftInterface {
         Ambien.INSTANCE.sendMessage("Disabled: " + this.name);
     }
 
+    public void addSetting(Setting set) {
+        Ambien.INSTANCE.getSettingsManager().rSetting(set);
+    }
+
     public final String getName() {
         return name;
     }
@@ -83,4 +87,7 @@ public class Module implements MinecraftInterface {
         return Ambien.INSTANCE.getSettingsManager().getSettingByName(name);
     }
 
+    protected final Setting getSetting(Module mod, String name) {
+        return Ambien.INSTANCE.getSettingsManager().getSettingByMod(mod, name);
+    }
 }

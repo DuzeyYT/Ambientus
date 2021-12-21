@@ -16,6 +16,7 @@ public class ClickGui extends Module {
         ArrayList<String> options = new ArrayList<>();
         options.add("New");
         options.add("JellyLike");
+        options.add("Base");
         Ambien.INSTANCE.settingsManager.rSetting(new Setting("Design", this, "New", options));
         Ambien.INSTANCE.settingsManager.rSetting(new Setting("Sound", this, false));
         Ambien.INSTANCE.settingsManager.rSetting(new Setting("GuiRed", this, 255, 0, 255, true));
@@ -26,8 +27,14 @@ public class ClickGui extends Module {
     @Override
     public void onEnable() {
         super.onEnable();
+        String mode = getSetting(this, "Design").getValString();
+        if(mode.equalsIgnoreCase("Base")) {
+            mc.displayGuiScreen(Ambien.INSTANCE.getClickGui());
+            //toggle();
+            return;
+        }
         mc.displayGuiScreen(Ambien.INSTANCE.heroCodeGui);
-       // toggle();
+        //toggle();
     }
 
     @Override

@@ -346,6 +346,9 @@ public class ClickGUI extends GuiScreen {
 				}
 			}
 		}
+
+		Module clickGUI = Ambien.INSTANCE.moduleManager.getModule("ClickGui");
+		if(clickGUI.isToggled()) clickGUI.toggle();
 	}
 
 	public void closeAllSettings() {
