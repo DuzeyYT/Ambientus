@@ -18,10 +18,10 @@ public class Bind extends Command {
             try {
                 Ambien.INSTANCE.getModuleManager().getModule(args[0]).setKey(Keyboard.getKeyIndex(args[1].toUpperCase()));
                 Ambien.INSTANCE.sendMessage("Bound " + Ambien.INSTANCE.getModuleManager().getModule(args[0]).getName() +  " to: " + Keyboard.getKeyName(Ambien.INSTANCE.getModuleManager().getModule(args[0]).getKey()));
+                Ambien.INSTANCE.fileManager.saveBinds();
             } catch (Exception e) {
                 Ambien.INSTANCE.sendMessage("Something went wrong!\nError: " + e.getMessage());
             }
         }
     }
-
 }

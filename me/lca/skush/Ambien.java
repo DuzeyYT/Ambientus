@@ -40,6 +40,7 @@ public enum Ambien {
         fileManager = new FileManager();
         fileManager.createMainDirectory();
         fileManager.loadModules();
+        fileManager.loadBinds();
 
         eventBus.register(this);
     }

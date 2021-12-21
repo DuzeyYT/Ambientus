@@ -21,7 +21,6 @@ public class FileManager {
         if(!folder.exists())
             folder.mkdir();
     }
-
     public void saveModules() {
         File export = new File(DIRECTORY + "\\modules.json");
 
@@ -53,6 +52,41 @@ public class FileManager {
                 Module mod = Ambien.INSTANCE.moduleManager.getModule(name);
                 if(mod != null && state) {
                     mod.toggle();
+                }
+            }
+        } catch (IOException | DeserializationException ignored) { }
+    }
+    public void saveBinds() {
+        File export = new File(DIRECTORY + "\\binds.json");
+
+        JsonObject json = new JsonObject();
+        JsonArray array = new JsonArray();
+        for(Module m : Ambien.INSTANCE.moduleManager.getModules()) {
+            JsonObject module = new JsonObject();
+            module.put("name", m.getName());
+            module.put("keyBind", m.getKey());
+            array.add(module);
+        }
+        json.put("modules", array);
+        try {
+            FileWriter writer = new FileWriter(export);
+            writer.write(Jsoner.prettyPrint(json.toJson()));
+            writer.flush();
+        } catch (IOException ignored) {}
+    }
+    public void loadBinds() {
+        File input = new File(DIRECTORY + "\\binds.json");
+        try {
+            FileReader reader = new FileReader(input);
+            JsonObject json = (JsonObject) Jsoner.deserialize(reader);
+            JsonArray array = (JsonArray) json.get("modules");
+            for (Object obj : array) {
+                JsonObject moduleObject = (JsonObject) obj;
+                String name = moduleObject.get("name").toString();
+                int keyBind = Integer.parseInt(moduleObject.get("keyBind").toString());
+                Module mod = Ambien.INSTANCE.moduleManager.getModule(name);
+                if(mod != null) {
+                    mod.setKey(keyBind);
                 }
             }
         } catch (IOException | DeserializationException ignored) { }
