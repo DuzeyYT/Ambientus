@@ -17,6 +17,5 @@ public class ESP extends Module {
     @Override
     public void onDisable() {
         super.onDisable();
-
     }
 }

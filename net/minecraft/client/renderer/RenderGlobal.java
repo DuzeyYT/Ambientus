@@ -322,7 +322,7 @@ public class RenderGlobal implements IWorldAccess, IResourceManagerReloadListene
     protected boolean isRenderEntityOutlines()
     {
         if(Ambien.INSTANCE.moduleManager.getModule("ESP").isToggled())
-            return true;
+            return !Config.isFastRender() && !Config.isShaders() && !Config.isAntialiasing();
         return !Config.isFastRender() && !Config.isShaders() && !Config.isAntialiasing() ? this.entityOutlineFramebuffer != null && this.entityOutlineShader != null && this.mc.thePlayer != null && this.mc.thePlayer.isSpectator() && this.mc.gameSettings.keyBindSpectatorOutlines.isKeyDown() : false;
     }
 
