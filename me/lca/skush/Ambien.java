@@ -8,6 +8,7 @@ import me.lca.skush.clickgui.setting.SettingsManager;
 import me.lca.skush.command.CommandManager;
 import me.lca.skush.event.impl.EventChat;
 import me.lca.skush.event.impl.EventKey;
+import me.lca.skush.file.FileManager;
 import me.lca.skush.module.Module;
 import me.lca.skush.module.ModuleManager;
 import net.minecraft.client.Minecraft;
@@ -23,8 +24,11 @@ public enum Ambien {
     public CommandManager commandManager;
     private Clickgui clickGui;
     public ClickGUI heroCodeGui;
+    public FileManager fileManager;
+
     public String name = "Ambien", version = "X", prefix = "[" + name + "]";
     public String[] authors = new String[] {"LCA_MODZ","Skush"};
+
     public final void init() {
         eventBus = new EventBus();
         settingsManager = new SettingsManager();
@@ -32,6 +36,9 @@ public enum Ambien {
         commandManager = new CommandManager();
         clickGui = new Clickgui();
         heroCodeGui = new ClickGUI();
+
+        fileManager = new FileManager();
+        fileManager.createMainDirectory();
 
         eventBus.register(this);
     }
