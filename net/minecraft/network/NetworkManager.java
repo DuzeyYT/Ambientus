@@ -40,6 +40,7 @@ import javax.crypto.SecretKey;
 
 import me.lca.skush.Ambien;
 import me.lca.skush.event.impl.EventPacket;
+import me.lca.skush.event.impl.EventReceivedPacket;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.CryptManager;
@@ -161,6 +162,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
 
     protected void channelRead0(ChannelHandlerContext p_channelRead0_1_, Packet p_channelRead0_2_) throws Exception
     {
+        EventReceivedPacket eventReceivedPacket = new EventReceivedPacket(p_channelRead0_2_);
+        eventReceivedPacket.call();
         //EventPacket ep = new EventPacket(p_channelRead0_2_);
         //ep.call();
 
@@ -168,6 +171,12 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
         {
             try
             {
+
+
+                if (eventReceivedPacket.isCancelled()) {
+                    return;
+                }
+
                 //if(!ep.isCancelled()) {
                     p_channelRead0_2_.processPacket(this.packetListener);
                 //}

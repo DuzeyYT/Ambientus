@@ -3,6 +3,7 @@ package me.lca.skush.module.impl.combat;
 
 import me.lca.skush.event.EventTarget;
 import me.lca.skush.event.impl.EventPacket;
+import me.lca.skush.event.impl.EventReceivedPacket;
 import me.lca.skush.event.impl.EventUpdate;
 import me.lca.skush.interfaces.ModuleInterface;
 import me.lca.skush.module.Category;
@@ -19,7 +20,7 @@ public class Velocity extends Module {
     }
 
     @EventTarget
-    public void eventPacket(EventPacket e) {
+    public void eventRecivedPacket(EventReceivedPacket e) {
         Packet p = e.getPacket();
         if (p instanceof S12PacketEntityVelocity) {
             S12PacketEntityVelocity packet = (S12PacketEntityVelocity) p;
