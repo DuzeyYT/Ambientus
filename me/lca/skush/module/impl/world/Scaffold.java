@@ -1,7 +1,7 @@
 package me.lca.skush.module.impl.world;
 
-import com.google.common.eventbus.Subscribe;
 import com.viaversion.viaversion.protocols.protocol1_13to1_12_2.blockconnections.BlockData;
+import me.lca.skush.event.EventTarget;
 import me.lca.skush.event.impl.EventPreMotion;
 import me.lca.skush.event.impl.EventPreUpdate;
 import me.lca.skush.event.impl.EventUpdate;
@@ -21,7 +21,7 @@ import net.minecraft.util.*;
 public class Scaffold extends Module {
     public static float yaw, pitch;
     public static BlockData data;
-    @Subscribe
+    @EventTarget
     public void onUpdate(EventUpdate e) {
         mc.thePlayer.setSprinting(false);
         data = find(new Vec3(0, 0, 0));
@@ -33,7 +33,7 @@ public class Scaffold extends Module {
             }
         }
     }
-    @Subscribe
+    @EventTarget
     @SuppressWarnings("unused")
     public void onPreUpdate(EventPreUpdate e) {
         float[] rotation = rotationrecode7(this.data);

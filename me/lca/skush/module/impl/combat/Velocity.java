@@ -1,7 +1,7 @@
 package me.lca.skush.module.impl.combat;
 
 
-import com.google.common.eventbus.Subscribe;
+import me.lca.skush.event.EventTarget;
 import me.lca.skush.event.impl.EventPacket;
 import me.lca.skush.event.impl.EventUpdate;
 import me.lca.skush.interfaces.ModuleInterface;
@@ -13,12 +13,12 @@ import net.minecraft.network.play.server.S12PacketEntityVelocity;
 @ModuleInterface(name = "Velocity", displayName = "Velocity", description = "Reduce Your Velocity", category = Category.Combat, color = 0xFFa7bacd)
 public class Velocity extends Module {
 
-    @Subscribe
+    @EventTarget
     public void onUpdate(EventUpdate e) {
         this.setDisplayName("Velocity \u00A77" + "Cancel");
     }
 
-    @Subscribe
+    @EventTarget
     public void eventPacket(EventPacket e) {
         Packet p = e.getPacket();
         if (p instanceof S12PacketEntityVelocity) {

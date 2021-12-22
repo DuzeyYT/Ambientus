@@ -23,6 +23,7 @@ import io.netty.channel.local.LocalChannel;
 import io.netty.channel.local.LocalEventLoopGroup;
 import io.netty.channel.local.LocalServerChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.oio.OioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.timeout.ReadTimeoutHandler;
@@ -31,6 +32,7 @@ import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 import java.net.InetAddress;
+import java.net.Proxy;
 import java.net.SocketAddress;
 import java.util.Queue;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -159,16 +161,16 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
 
     protected void channelRead0(ChannelHandlerContext p_channelRead0_1_, Packet p_channelRead0_2_) throws Exception
     {
-        EventPacket eventPacket = new EventPacket(p_channelRead0_2_);
-        Ambien.INSTANCE.eventBus.post(eventPacket);
+        //EventPacket ep = new EventPacket(p_channelRead0_2_);
+        //ep.call();
 
         if (this.channel.isOpen())
         {
             try
             {
-                if(!eventPacket.isCancelled()) {
+                //if(!ep.isCancelled()) {
                     p_channelRead0_2_.processPacket(this.packetListener);
-                }
+                //}
             }
             catch (ThreadQuickExitException var4)
             {
@@ -190,10 +192,10 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
 
     public void sendPacket(Packet packetIn)
     {
-        EventPacket eventPacket = new EventPacket(packetIn);
-        Ambien.INSTANCE.eventBus.post(eventPacket);
+        EventPacket ep = new EventPacket(packetIn);
+        ep.call();
 
-        if(eventPacket.isCancelled())
+        if(ep.isCancelled())
             return;
 
         if (this.isChannelOpen())
@@ -391,6 +393,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
                     ;
                 }
 
+                /* ViaVersion */
                 p_initChannel_1_.pipeline().addLast((String)"timeout", (ChannelHandler)(new ReadTimeoutHandler(30))).addLast((String)"splitter", (ChannelHandler)(new MessageDeserializer2())).addLast((String)"decoder", (ChannelHandler)(new MessageDeserializer(EnumPacketDirection.CLIENTBOUND))).addLast((String)"prepender", (ChannelHandler)(new MessageSerializer2())).addLast((String)"encoder", (ChannelHandler)(new MessageSerializer(EnumPacketDirection.SERVERBOUND))).addLast((String)"packet_handler", (ChannelHandler)networkmanager);
                 if (p_initChannel_1_ instanceof SocketChannel && ViaMCP.getInstance().getVersion() != ViaMCP.PROTOCOL_VERSION)
                 {
@@ -483,8 +486,9 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
             }
             else
             {
+                /* ViaVersion */
                 NettyUtil.decodeEncodePlacement(channel.pipeline(), "decoder", "decompress", new NettyCompressionDecoder(treshold));
-                //this.channel.pipeline().addBefore("decoder", "decompress", new NettyCompressionDecoder(treshold));
+                // Original -> this.channel.pipeline().addBefore("decoder", "decompress", new NettyCompressionDecoder(treshold));
             }
 
             if (this.channel.pipeline().get("compress") instanceof NettyCompressionEncoder)
@@ -493,8 +497,9 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet>
             }
             else
             {
+                /* ViaVersion */
                 this.channel.pipeline().addBefore("encoder", "compress", new NettyCompressionEncoder(treshold));
-                //this.channel.pipeline().addBefore("encoder", "compress", new NettyCompressionEncoder(treshold));
+                // Original -> this.channel.pipeline().addBefore("encoder", "compress", new NettyCompressionEncoder(treshold));
             }
         }
         else

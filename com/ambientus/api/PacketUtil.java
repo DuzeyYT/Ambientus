@@ -5,11 +5,11 @@ import net.minecraft.network.Packet;
 
 public class PacketUtil {
     public static void sendPacketSilentMC(Packet packet) {
-        Minecraft.getMinecraft().thePlayer.sendQueue.getNetworkManager().sendPacket(packet, null, null);
+        Minecraft.getMinecraft().thePlayer.sendQueue.getNetworkManager().sendPacket(packet, null);
     }
 
     public static void sendPacketSilent(Packet packet) {
-        Minecraft.getMinecraft().getNetHandler().getNetworkManager().sendPacket(packet, null, null);
+        Minecraft.getMinecraft().getNetHandler().getNetworkManager().sendPacket(packet, null);
     }
 
     public static void sendPacketMC(Packet packet) {

@@ -6,6 +6,8 @@ import de.Hero.clickgui.ClickGUI;
 import me.lca.skush.clickgui.Clickgui;
 import me.lca.skush.clickgui.setting.SettingsManager;
 import me.lca.skush.command.CommandManager;
+import me.lca.skush.event.EventManager;
+import me.lca.skush.event.EventTarget;
 import me.lca.skush.event.impl.EventChat;
 import me.lca.skush.event.impl.EventKey;
 import me.lca.skush.file.FileManager;
@@ -22,8 +24,8 @@ public enum Ambien {
 
     INSTANCE;
 
-    public EventBus eventBus;
     public SettingsManager settingsManager;
+    public EventManager eventManager;
     public ModuleManager moduleManager;
     public CommandManager commandManager;
     private Clickgui clickGui;
@@ -40,8 +42,8 @@ public enum Ambien {
             ViaMCP.getInstance().start();
         } catch (Exception e) { e.printStackTrace(); }
 
-        eventBus = new EventBus();
         settingsManager = new SettingsManager();
+        eventManager = new EventManager();
         moduleManager = new ModuleManager();
         commandManager = new CommandManager();
         clickGui = new Clickgui();
@@ -53,10 +55,10 @@ public enum Ambien {
         fileManager.loadModules();
         fileManager.loadBinds();
 
-        eventBus.register(this);
+        eventManager.register(this);
     }
 
-    @Subscribe
+    @EventTarget
     public void onKey(EventKey e) {
         for (Module m : moduleManager.getModules()) {
             if (m.getKey() == e.getKey()) {
@@ -65,16 +67,16 @@ public enum Ambien {
         }
     }
 
-    @Subscribe
+    @EventTarget
     public void onChat(EventChat e) {
         commandManager.handleChat(e);
     }
 
     public final void stop() {
-        eventBus.unregister(this);
+        eventManager.unregister(this);
     }
-    public final EventBus getEventBus() {
-        return eventBus;
+    public final EventManager getEventManager() {
+        return eventManager;
     }
     public final ModuleManager getModuleManager() {
         return moduleManager;

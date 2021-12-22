@@ -151,7 +151,8 @@ public class GuiIngame extends Gui
             }
         }
 
-        Ambien.INSTANCE.getEventBus().post(new Event2D(scaledresolution, partialTicks, getFontRenderer()));
+        Event2D event2D = new Event2D(scaledresolution, partialTicks, getFontRenderer());
+        event2D.call();
 
         if (this.mc.playerController.isSpectator())
         {

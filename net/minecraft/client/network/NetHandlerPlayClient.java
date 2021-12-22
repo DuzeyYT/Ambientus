@@ -1192,6 +1192,11 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
         }
     }
 
+    public void addToSendQueueSilent(final Packet<?> p_147297_1_)
+    {
+        this.netManager.sendPacket(p_147297_1_);
+    }
+
     /**
      * Handles the placement of a specified ItemStack in a specified container/inventory slot
      */

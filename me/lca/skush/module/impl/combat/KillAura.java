@@ -1,7 +1,7 @@
 package me.lca.skush.module.impl.combat;
 
-import com.google.common.eventbus.Subscribe;
 import me.lca.skush.clickgui.setting.Setting;
+import me.lca.skush.event.EventTarget;
 import me.lca.skush.event.impl.EventPreUpdate;
 import me.lca.skush.event.impl.EventUpdate;
 import me.lca.skush.interfaces.ModuleInterface;
@@ -35,9 +35,7 @@ public class KillAura extends Module {
 
     }
 
-
-
-    @Subscribe
+    @EventTarget
     @SuppressWarnings("unused")
     public void onUpdate(EventUpdate e) {
 
@@ -69,7 +67,7 @@ public class KillAura extends Module {
         }
     }
 
-    @Subscribe
+    @EventTarget
     @SuppressWarnings("unused")
     public void onPreUpdate(EventPreUpdate e) {
         if (target == null)

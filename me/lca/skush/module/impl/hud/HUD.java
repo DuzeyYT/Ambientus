@@ -1,8 +1,8 @@
 package me.lca.skush.module.impl.hud;
 
-import com.google.common.eventbus.Subscribe;
 import me.lca.skush.Ambien;
 import me.lca.skush.clickgui.setting.Setting;
+import me.lca.skush.event.EventTarget;
 import me.lca.skush.event.impl.Event2D;
 import me.lca.skush.interfaces.ModuleInterface;
 import me.lca.skush.module.Category;
@@ -27,7 +27,7 @@ public class HUD extends Module {
         addSetting(new Setting("ArrayList Mode", this, "Basic", watermarkMode));
     }
 
-    @Subscribe
+    @EventTarget
     public void onRender(Event2D event) {
        // renderWatermark();
         renderArrayList();

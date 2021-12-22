@@ -1,7 +1,7 @@
 package me.lca.skush.module.impl.hud;
 
-import com.google.common.eventbus.Subscribe;
 import me.lca.skush.Ambien;
+import me.lca.skush.event.EventTarget;
 import me.lca.skush.event.impl.Event2D;
 import me.lca.skush.interfaces.ModuleInterface;
 import me.lca.skush.module.Category;
@@ -17,7 +17,7 @@ import java.awt.*;
 @ModuleInterface(name = "TabGUI", displayName = "TabGUI", category = Category.HUD, color = 0xFFbf5002)
 public class TabGUI extends Module {
 
-    @Subscribe
+    @EventTarget
     public void onRender(Event2D event) {
         ScaledResolution sr = new ScaledResolution(mc);
 

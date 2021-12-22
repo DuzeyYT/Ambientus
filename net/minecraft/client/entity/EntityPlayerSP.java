@@ -167,7 +167,9 @@ public class EntityPlayerSP extends AbstractClientPlayer
     {
         if (this.worldObj.isBlockLoaded(new BlockPos(this.posX, 0.0D, this.posZ)))
         {
-            Ambien.INSTANCE.getEventBus().post(new EventUpdate());
+            EventUpdate eventUpdate = new EventUpdate();
+            eventUpdate.call();
+
             super.onUpdate();
 
             if (this.isRiding())
@@ -187,12 +189,11 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public void onUpdateWalkingPlayer()
     {
-
-
         EventPreMotion event = new EventPreMotion(this.rotationYaw, this.rotationPitch);
-        Ambien.INSTANCE.getEventBus().post(event);
+        event.call();
+
         EventPreUpdate eventPreUpdate = new EventPreUpdate(new float[] {rotationYaw, rotationPitch}, onGround);
-        Ambien.INSTANCE.getEventBus().post(eventPreUpdate);
+        eventPreUpdate.call();
 
         boolean flag = this.isSprinting();
 
@@ -302,7 +303,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
     public void sendChatMessage(String message)
     {
         EventChat eventChat = new EventChat(message);
-        Ambien.INSTANCE.getEventBus().post(eventChat);
+        eventChat.call();
 
         if (eventChat.isCancelled())
             return;

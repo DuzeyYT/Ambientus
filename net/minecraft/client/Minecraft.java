@@ -1990,7 +1990,9 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                     }
                     else
                     {
-                        Ambien.INSTANCE.getEventBus().post(new EventKey(k));
+                        EventKey eventKey = new EventKey(k);
+                        eventKey.call();
+
                         if (k == 1)
                         {
                             this.displayInGameMenu();

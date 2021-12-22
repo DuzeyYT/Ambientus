@@ -1,8 +1,8 @@
 package me.lca.skush.module.impl.movement;
 
-import com.google.common.eventbus.Subscribe;
 import me.lca.skush.Ambien;
 import me.lca.skush.clickgui.setting.Setting;
+import me.lca.skush.event.EventTarget;
 import me.lca.skush.event.impl.EventUpdate;
 import me.lca.skush.interfaces.ModuleInterface;
 import me.lca.skush.module.Category;
@@ -26,7 +26,7 @@ public class Fly extends Module {
         rSetting(new Setting("Fly-AntiKick", this,true));
     }
 
-    @Subscribe
+    @EventTarget
     public void onUpdate(EventUpdate e) {
         this.setDisplayName("Fly \u00A77" + getSetting(this, "Fly-Mode").getValString());
 
