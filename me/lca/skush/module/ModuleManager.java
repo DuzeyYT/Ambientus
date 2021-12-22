@@ -2,6 +2,7 @@ package me.lca.skush.module;
 
 import me.lca.skush.module.impl.combat.KillAura;
 import me.lca.skush.module.impl.combat.Velocity;
+import me.lca.skush.module.impl.exploits.Disabler;
 import me.lca.skush.module.impl.exploits.SentinelFixer;
 import me.lca.skush.module.impl.hud.ClickGui;
 import me.lca.skush.module.impl.hud.HUD;
@@ -28,13 +29,17 @@ public class ModuleManager {
         /* Combat */
         addModule(new KillAura());
         addModule(new Velocity());
+
         /* Exploit */
         addModule(new SentinelFixer());
+        addModule(new Disabler());
+
         /* Movement */
         addModule(new Sprint());
         addModule(new Fly());
         addModule(new InventoryMove());
         addModule(new NoSlowDown());
+
         /* Player */
         addModule(new AutoArmor());
         addModule(new InvManager());
@@ -42,14 +47,17 @@ public class ModuleManager {
         addModule(new ChestStealer());
         addModule(new MiddleClick());
         addModule(new PingSpoof());
+
         /* Visual */
         addModule(new BedESP());
         addModule(new ESP());
         addModule(new ChestESP());
         addModule(new ItemPhysics());
         addModule(new NameTags());
+
         /* World */
         addModule(new Scaffold());
+
         /* HUD */
         addModule(new ClickGui());
         addModule(new HUD());

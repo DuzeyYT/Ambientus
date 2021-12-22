@@ -228,7 +228,7 @@ public abstract class Entity implements ICommandSender
     protected Vec3 field_181017_ao;
     protected EnumFacing field_181018_ap;
     private boolean invulnerable;
-    protected UUID entityUniqueID;
+    public UUID entityUniqueID;
 
     /** The command result statistics for this Entity. */
     private final CommandResultStats cmdResultStats;

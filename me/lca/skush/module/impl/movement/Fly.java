@@ -7,6 +7,7 @@ import me.lca.skush.event.impl.EventUpdate;
 import me.lca.skush.interfaces.ModuleInterface;
 import me.lca.skush.module.Category;
 import me.lca.skush.module.Module;
+import org.apache.commons.lang3.RandomUtils;
 
 import java.util.ArrayList;
 
@@ -33,8 +34,6 @@ public class Fly extends Module {
         switch (getSetting("Fly-Mode").getValString())
         {
             case "Hypixel":
-                mc.thePlayer.motionY = 0;
-               // mc.thePlayer.jump();
                 break;
             case "AAC":
                 aac();
@@ -66,5 +65,8 @@ public class Fly extends Module {
     @Override
     public void onDisable() {
         super.onDisable();
+
+        mc.timer.timerSpeed = 1.0F;
+        mc.thePlayer.speedInAir = 0.02F;
     }
 }
