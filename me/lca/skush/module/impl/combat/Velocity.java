@@ -16,29 +16,22 @@ public class Velocity extends Module {
     @Subscribe
     public void onUpdate(EventUpdate e) {
         this.setDisplayName("Velocity \u00A77" + "Cancel");
-
-
-
     }
 
     @Subscribe
     public void eventPacket(EventPacket e) {
-        if (e instanceof EventPacket) {
-            Packet p = EventPacket.INSTANCE.getPacket();
-            if (p instanceof S12PacketEntityVelocity) {
-                S12PacketEntityVelocity packet = (S12PacketEntityVelocity) p;
-                if (packet.getEntityID() == mc.thePlayer.getEntityId())
-                    EventPacket.INSTANCE.setCancelled(true);
-            }
-            if (p instanceof net.minecraft.network.play.server.S27PacketExplosion)
+        Packet p = e.getPacket();
+        if (p instanceof S12PacketEntityVelocity) {
+            S12PacketEntityVelocity packet = (S12PacketEntityVelocity) p;
+            if (packet.getEntityID() == mc.thePlayer.getEntityId())
                 EventPacket.INSTANCE.setCancelled(true);
         }
+        if (p instanceof net.minecraft.network.play.server.S27PacketExplosion)
+            EventPacket.INSTANCE.setCancelled(true);
     }
-
 
     @Override
     public void onDisable() {
         super.onDisable();
-
     }
 }
