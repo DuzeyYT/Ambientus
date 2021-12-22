@@ -34,6 +34,7 @@ public class Fly extends Module {
         switch (getSetting("Fly-Mode").getValString())
         {
             case "Hypixel":
+                hypixel();
                 break;
             case "AAC":
                 aac();
