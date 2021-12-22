@@ -4,9 +4,12 @@ import com.viaversion.viaversion.protocols.protocol1_13to1_12_2.blockconnections
 import me.lca.skush.interfaces.MinecraftInterface;
 import me.lca.skush.module.impl.world.Scaffold;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
+
+import java.util.Random;
 
 public final class RotationUtil implements MinecraftInterface {
 
@@ -29,5 +32,24 @@ public final class RotationUtil implements MinecraftInterface {
         pitch = f1;
         return new float[] {yaw, pitch};
     }
-
+    public static float[] Intavee(final EntityPlayerSP player, final EntityLivingBase target) {
+        final float RotationPitch = (float) MathHelper.getRandomDoubleInRange(new Random(), 90, 92);
+        final float RotationYaw = (float) MathHelper.getRandomDoubleInRange(new Random(), RotationPitch, 94);
+        final double posX = target.posX - player.posX;
+        final float RotationY2 = (float) MathHelper.getRandomDoubleInRange(new Random(), 175, 180);
+        final float RotationY4 = (float) MathHelper.getRandomDoubleInRange(new Random(), 0.2, 0.3);
+        final float RotationY3 = (float) MathHelper.getRandomDoubleInRange(new Random(), RotationY4, 0.1);
+        final double posY = target.posY + target.getEyeHeight()
+                - (player.posY + player.getAge() + player.getEyeHeight() + RotationY3);
+        final double posZ = target.posZ - player.posZ;
+        final double var14 = MathHelper.sqrt_double(posX * posX + posZ * posZ);
+        float yaw = (float) (Math.atan2(posZ, posX) * RotationY2 / Math.PI) - RotationYaw;
+        float pitch = (float) -(Math.atan2(posY, var14) * RotationY2 / Math.PI);
+        final float f2 = Minecraft.getMinecraft().gameSettings.mouseSensitivity * 0.6F + 0.2F;
+        final float f3 = f2 * f2 * f2 * 1.2F;
+        yaw -= yaw % f3;
+        pitch -= pitch % (f3 * f2);
+        // return new float[]{yaw, MathHelper.clamp_float(pitch, -90, 90)};
+        return new float[] { yaw, pitch };
+    }
 }

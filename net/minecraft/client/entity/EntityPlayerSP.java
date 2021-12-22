@@ -317,9 +317,9 @@ public class EntityPlayerSP extends AbstractClientPlayer
     public void swingItem() {
         super.swingItem();
         //if (ViaMCP.PROTOCOL_VERSION == 47) {
-            this.sendQueue.addToSendQueue(new C0APacketAnimation());
+        this.sendQueue.addToSendQueue(new C0APacketAnimation());
         //} else {
-            //this.sendQueue.addToSendQueue(new CAnimateHandPacket(Hand.MAIN_HAND));
+        //this.sendQueue.addToSendQueue(new CAnimateHandPacket(Hand.MAIN_HAND));
         //}
     }
 

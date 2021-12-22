@@ -1,6 +1,8 @@
 package net.minecraft.client.renderer.entity;
 
 import com.google.common.collect.Lists;
+
+import java.awt.*;
 import java.nio.FloatBuffer;
 import java.util.List;
 import net.minecraft.client.Minecraft;
@@ -247,12 +249,15 @@ public abstract class RendererLivingEntity<T extends EntityLivingBase> extends R
             }
         }
 
-        float f1 = (float)(i >> 16 & 255) / 255.0F;
-        float f2 = (float)(i >> 8 & 255) / 255.0F;
-        float f = (float)(i & 255) / 255.0F;
+        float c1 = (float) (Color.blue.getRGB() >> 16 & 255) / 255.0F;
+        float c2 = (float) (Color.blue.getRGB()  >> 8 & 255) / 255.0F;
+        float c = (float) (Color.blue.getRGB()  & 255) / 255.0F;
+
+
         GlStateManager.disableLighting();
         GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
-        GlStateManager.color(f1, f2, f, 1.0F);
+        GlStateManager.color(c1, c2, c, 1.0F);
+      //  RenderUtil.glColor(((ColorValue)Client.INSTANCE.moduleManager.getModule("ESP").getSetting("Color").getSetting()).color);
         GlStateManager.disableTexture2D();
         GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
         GlStateManager.disableTexture2D();

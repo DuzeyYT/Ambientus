@@ -10,27 +10,32 @@ import me.lca.skush.module.Module;
 import me.lca.skush.utils.AuraUtil;
 import me.lca.skush.utils.RotationUtil;
 import me.lca.skush.utils.TimeUtil;
+import me.lca.skush.utils.TimeUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.MathHelper;
+import net.minecraft.util.Rotations;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 @ModuleInterface(name = "KillAura", displayName = "KillAura", description = "Attacks Entitys", category = Category.Combat, color = 0xFFb8d81c)
 public class KillAura extends Module {
 
     public static float yaw, pitch;
     public EntityLivingBase target;
-    private final TimeUtil timeUtil = new TimeUtil();
+    private final TimeUtils timeUtil = new TimeUtils();
     public static ArrayList<Entity> bots = new ArrayList<>();
     @Override
     public void setup() {
         super.setup();
         rSetting(new Setting("AuraRange", this, 4, 3, 6, false));
-        rSetting(new Setting("AuraAPS", this, 13, 5, 20, true));
+        rSetting(new Setting("MinCPS", this, 13, 5, 20, true));
+        rSetting(new Setting("MaxCPS", this, 13, 5, 20, true));
         rSetting(new Setting("Antibots",  this, false));
 
     }
@@ -38,7 +43,12 @@ public class KillAura extends Module {
     @EventTarget
     @SuppressWarnings("unused")
     public void onUpdate(EventUpdate e) {
-
+        if (!mc.thePlayer.isSwingInProgress) {
+            if (mc.thePlayer.getHeldItem() != null)
+                if (mc.thePlayer.getHeldItem().getItem() instanceof net.minecraft.item.ItemSword) {
+                    mc.gameSettings.keyBindUseItem.pressed = false;
+                }
+        }
 
         if (getSetting("Antibots").getValBoolean()) {
             for (final Object entity : mc.theWorld.getLoadedEntityList())
@@ -56,14 +66,21 @@ public class KillAura extends Module {
 
         if (target != null) {
 
-            float[] rotations = RotationUtil.getRotations(target);
+            float[] rotations = RotationUtil.Intavee(mc.thePlayer, target);
             yaw = rotations[0];
             pitch = rotations[1];
-
-            if (timeUtil.hasTimeReached((long) (1000 / getSetting("AuraAPS").getValDouble()))) {
+            final float CPS = (float) MathHelper.getRandomDoubleInRange(new Random(), getSetting("MinCPS").getValDouble(), getSetting("MaxCPS").getValDouble());
+            if (timeUtil.hasReached((long) (1000 / CPS))) {
                 AuraUtil.attack(target);
                 timeUtil.reset();
             }
+        }
+        if (mc.thePlayer.isSwingInProgress &&  mc.thePlayer.hurtTime != 0 ) {
+            if (mc.thePlayer.getHeldItem() != null)
+                if (mc.thePlayer.getHeldItem().getItem() instanceof net.minecraft.item.ItemSword) {
+                    mc.gameSettings.keyBindUseItem.pressed = true;
+                }
+
         }
     }
 
@@ -72,9 +89,11 @@ public class KillAura extends Module {
     public void onPreUpdate(EventPreUpdate e) {
         if (target == null)
             return;
-
+        float[] rotations = RotationUtil.Intavee(mc.thePlayer, target);
+        pitch = rotations[1];
         mc.thePlayer.rotationYawHead = yaw;
         mc.thePlayer.renderYawOffset = yaw;
+        mc.thePlayer.rotationPitchHead = rotations[1];
         e.setRotation(new float[] {yaw, pitch});
     }
 
@@ -89,8 +108,9 @@ public class KillAura extends Module {
 
     @Override
     public void onDisable() {
-        bots.clear();
+
         super.onDisable();
+        bots.clear();
     }
     boolean isBot(EntityPlayer player) {
         if (!isInTablist(player))

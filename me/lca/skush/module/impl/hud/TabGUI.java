@@ -9,6 +9,7 @@ import me.lca.skush.module.Module;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
@@ -42,6 +43,8 @@ public class TabGUI extends Module {
         // Client.blurHelper.blur2(x, y, x + width, y + height, 1);
         gui.drawRect(x + 69, (y - 1) + (index * 14) + 1, x - 14.5F, y + 13 + (index * 14) - 1,
                 new Color(20,102,52).getRGB());
+        GlStateManager.enableAlpha();
+        GlStateManager.enableBlend();
         drawImage(sr.getScaledWidth() / 140- 1, -4, 96, 96, new ResourceLocation("ambien/ambien.png"));
         for (int yT = 0; yT < Category.values().length; yT++) {
 
