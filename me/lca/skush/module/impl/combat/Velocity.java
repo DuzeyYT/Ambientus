@@ -24,10 +24,10 @@ public class Velocity extends Module {
         if (p instanceof S12PacketEntityVelocity) {
             S12PacketEntityVelocity packet = (S12PacketEntityVelocity) p;
             if (packet.getEntityID() == mc.thePlayer.getEntityId())
-                EventPacket.INSTANCE.setCancelled(true);
+                e.setCancelled(true);
         }
         if (p instanceof net.minecraft.network.play.server.S27PacketExplosion)
-            EventPacket.INSTANCE.setCancelled(true);
+            e.setCancelled(true);
     }
 
     @Override
