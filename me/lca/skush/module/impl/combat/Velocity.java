@@ -24,7 +24,7 @@ public class Velocity extends Module {
         Packet p = e.getPacket();
         if (p instanceof S12PacketEntityVelocity) {
             S12PacketEntityVelocity packet = (S12PacketEntityVelocity) p;
-            if (packet.getEntityID() == mc.thePlayer.getEntityId())
+            //if (packet.getEntityID() == mc.thePlayer.getEntityId())
                 e.setCancelled(true);
         }
         if (p instanceof net.minecraft.network.play.server.S27PacketExplosion)
