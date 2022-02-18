@@ -78,7 +78,7 @@ public class KillAura extends Module {
         if (mc.thePlayer.isSwingInProgress &&  mc.thePlayer.hurtTime != 0 ) {
             if (mc.thePlayer.getHeldItem() != null)
                 if (mc.thePlayer.getHeldItem().getItem() instanceof net.minecraft.item.ItemSword) {
-                    mc.gameSettings.keyBindUseItem.pressed = true;
+                    //mc.gameSettings.keyBindUseItem.pressed = true;
                 }
 
         }

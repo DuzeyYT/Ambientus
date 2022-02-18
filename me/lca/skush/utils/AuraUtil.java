@@ -12,7 +12,7 @@ public final class AuraUtil implements MinecraftInterface {
         EntityPlayer entityPlayer = null;
         for (Entity entity : mc.theWorld.loadedEntityList)
         {
-            if (mc.thePlayer.getDistanceToEntity(entity) < range && shouldAttack((EntityLivingBase) entity)) {
+            if (mc.thePlayer.getDistanceToEntity(entity) < range && shouldAttack((EntityLivingBase) entity) && !entity.isDead && ((EntityLivingBase) entity).getHealth() > 0.0F) {
                 range = mc.thePlayer.getDistanceToEntity(entity);
                 entityPlayer = (EntityPlayer)entity;
             }

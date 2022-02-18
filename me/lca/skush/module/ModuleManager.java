@@ -7,10 +7,7 @@ import me.lca.skush.module.impl.exploits.SentinelFixer;
 import me.lca.skush.module.impl.hud.ClickGui;
 import me.lca.skush.module.impl.hud.HUD;
 import me.lca.skush.module.impl.hud.TabGUI;
-import me.lca.skush.module.impl.movement.Fly;
-import me.lca.skush.module.impl.movement.InventoryMove;
-import me.lca.skush.module.impl.movement.NoSlowDown;
-import me.lca.skush.module.impl.movement.Sprint;
+import me.lca.skush.module.impl.movement.*;
 import me.lca.skush.module.impl.player.*;
 import me.lca.skush.module.impl.visual.*;
 import me.lca.skush.module.impl.world.Scaffold;
@@ -39,6 +36,7 @@ public class ModuleManager {
         addModule(new Fly());
         addModule(new InventoryMove());
         addModule(new NoSlowDown());
+        addModule(new Speed());
 
         /* Player */
         addModule(new AutoArmor());

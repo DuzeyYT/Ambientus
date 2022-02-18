@@ -21,27 +21,25 @@ public class TabGUI extends Module {
     @EventTarget
     public void onRender(Event2D event) {
         ScaledResolution sr = new ScaledResolution(mc);
-
-        Gui gui = new Gui();
-
+        
         int index = 0;
         float x = 26, y = 80;
         float height = Category.values().length * 15, width = 60;
 
 
-        gui.drawRect(x- 18, y- 11, x + width + 12, y + height - 4, new Color(0,0,0,230).getRGB());
+        Gui.drawRect(x- 18, y- 11, x + width + 12, y + height - 4, new Color(0,0,0,230).getRGB());
 
 
 
-        gui.drawRect(x- 18, y- 10.5F, x + width -74.5F, y + height - 1,-1);
-        gui.drawRect(x- 18, y + height - 4, x + width + 12, y + height - 1, -1);
+        Gui.drawRect(x- 18, y- 10.5F, x + width -74.5F, y + height - 1,-1);
+        Gui.drawRect(x- 18, y + height - 4, x + width + 12, y + height - 1, -1);
 
 
-        gui.drawRect(x+ 69, y- 10.5F, x + width + 12, y + height - 1, -1);
+        Gui.drawRect(x+ 69, y- 10.5F, x + width + 12, y + height - 1, -1);
 
 
         // Client.blurHelper.blur2(x, y, x + width, y + height, 1);
-        gui.drawRect(x + 69, (y - 1) + (index * 14) + 1, x - 14.5F, y + 13 + (index * 14) - 1,
+        Gui.drawRect(x + 69, (y - 1) + (index * 14) + 1, x - 14.5F, y + 13 + (index * 14) - 1,
                 new Color(20,102,52).getRGB());
         GlStateManager.enableAlpha();
         GlStateManager.enableBlend();
