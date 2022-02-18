@@ -21,7 +21,7 @@ public class TabGUI extends Module {
     @EventTarget
     public void onRender(Event2D event) {
         ScaledResolution sr = new ScaledResolution(mc);
-        
+
         int index = 0;
         float x = 26, y = 80;
         float height = Category.values().length * 15, width = 60;
